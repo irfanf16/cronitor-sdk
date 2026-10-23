@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "telemetry": {
+      "TELEMETRY00": {
+        "id": "TELEMETRY00",
+        "api_key": "API_KEY01",
+        "monitor_key": "MONITOR_KEY01"
+      },
+      "TELEMETRY01": {
+        "id": "TELEMETRY01",
+        "api_key": "API_KEY01",
+        "monitor_key": "MONITOR_KEY01"
+      },
+      "TELEMETRY02": {
+        "id": "TELEMETRY02",
+        "api_key": "API_KEY01",
+        "monitor_key": "MONITOR_KEY01"
+      }
+    }
+  },
+  "new": {
+    "telemetry": {
+      "telemetry_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /p/{apiKey}/{monitorKey}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /p/{apiKey}/{monitorKey}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

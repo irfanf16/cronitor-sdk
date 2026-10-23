@@ -1,0 +1,46 @@
+# BasicTelemetryFlow
+
+main: kit: flow: BasicTelemetryFlow:
+{
+  entity: "telemetry",
+  kind: "basic",
+  name: "BasicTelemetryFlow",
+  step: [
+    {
+      i: {
+        ref: "telemetry_ref01"
+      }
+
+      m: {
+        api_key: "api_key01",
+        monitor_key: "monitor_key01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "telemetry_ref01",
+        srcdatavar: "telemetry_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        api_key: "api_key01",
+        id: "telemetry01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-telemetry_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTelemetryFlow"
+}

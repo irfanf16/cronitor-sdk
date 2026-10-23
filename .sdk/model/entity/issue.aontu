@@ -1,0 +1,762 @@
+# Entity: issue
+
+main: kit: entity: issue: {
+
+  alias: field: {}
+
+  fields: {
+    affected_components: {
+      h: "Affected Components"
+      n: "affected_components"
+      r: false
+      sh: "Status page component keys."
+      t: "`$ARRAY`"
+    }
+    alerts: {
+      h: "Alerts"
+      n: "alerts"
+      r: true
+      ro: true
+      sh: "Present with withAlertDetails=true."
+      t: "`$ARRAY`"
+    }
+    assigned_to: {
+      fo: "email"
+      h: "Assigned To"
+      n: "assigned_to"
+      r: false
+      sh: "Email address of the assigned team member."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    created_by: {
+      h: "Created By"
+      n: "created_by"
+      r: true
+      ro: true
+      t: "`$ANY`"
+    }
+    duration: {
+      h: "Duration"
+      n: "duration"
+      r: true
+      ro: true
+      sh: "Seconds of downtime."
+      t: "`$INTEGER`"
+    }
+    ended: {
+      fo: "date-time"
+      h: "Ended"
+      n: "ended"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    environment: {
+      h: "Environment"
+      n: "environment"
+      r: false
+      sh: "Environment key."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    monitors: {
+      h: "Monitors"
+      n: "monitors"
+      r: true
+      ro: true
+      sh: "Null unless withMonitorDetails=true, which includes monitor details."
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    severity: {
+      h: "Severity"
+      n: "severity"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    started: {
+      fo: "date-time"
+      h: "Started"
+      n: "started"
+      r: false
+      t: "`$STRING`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      sh: "* `unresolved` - unresolved * `investigating` - investigating * `identified` - identified * `monitoring` - monitoring * `resolved` - resolved * `update` - update"
+      t: "`$STRING`"
+    }
+    statuspages: {
+      h: "Statuspages"
+      n: "statuspages"
+      r: false
+      sh: "Status page keys."
+      t: "`$ARRAY`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    updates: {
+      h: "Updates"
+      n: "updates"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "issue"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "affected_components"
+            "assigned_to"
+            "environment"
+            "name"
+            "severity"
+            "started"
+            "state"
+            "statuspages"
+            "updates"
+          ]
+          co: {
+            id: "POST /api/issues"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "with_alert_detail"
+                or: "withAlertDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_component_detail"
+                or: "withComponentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_environment_detail"
+                or: "withEnvironmentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_monitor_detail"
+                or: "withMonitorDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status_page_detail"
+                or: "withStatusPageDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/issues"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "action"
+            "assign_to"
+            "issues"
+            "state"
+          ]
+          co: {
+            id: "POST /api/issues/bulk"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/issues/bulk"
+          q: {
+            "$action": "bulk"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+            {
+              lit: "bulk"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/issues"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "check"
+                or: "check"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "component"
+                or: "component"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "group"
+                or: "group"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "heartbeat"
+                or: "heartbeat"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "job"
+                or: "job"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "orderBy"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "severity"
+                or: "severity"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "site"
+                or: "site"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "state"
+                or: "state"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "statuspage"
+                or: "statuspage"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "time"
+                or: "time"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "with_alert_detail"
+                or: "withAlertDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_component_detail"
+                or: "withComponentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_environment_detail"
+                or: "withEnvironmentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_monitor_detail"
+                or: "withMonitorDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status_page_detail"
+                or: "withStatusPageDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_summary"
+                or: "withSummary"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/issues"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/issues/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "with_alert_detail"
+                or: "withAlertDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_component_detail"
+                or: "withComponentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_environment_detail"
+                or: "withEnvironmentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_monitor_detail"
+                or: "withMonitorDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status_page_detail"
+                or: "withStatusPageDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/issues/{key}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              key: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/issues/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/issues/{key}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              key: "id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "affected_components"
+            "assigned_to"
+            "environment"
+            "name"
+            "severity"
+            "started"
+            "state"
+            "statuspages"
+            "updates"
+          ]
+          co: {
+            id: "PUT /api/issues/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "with_alert_detail"
+                or: "withAlertDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_component_detail"
+                or: "withComponentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_environment_detail"
+                or: "withEnvironmentDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_monitor_detail"
+                or: "withMonitorDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status_page_detail"
+                or: "withStatusPageDetails"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/issues/{key}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              key: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "issues"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

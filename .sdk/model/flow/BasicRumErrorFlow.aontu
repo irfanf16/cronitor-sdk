@@ -1,0 +1,44 @@
+# BasicRumErrorFlow
+
+main: kit: flow: BasicRumErrorFlow:
+{
+  entity: "rum_error",
+  kind: "basic",
+  name: "BasicRumErrorFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "rum_error_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "rum_error_ref01",
+        srcdatavar: "rum_error_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "rum_error01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-rum_error_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRumErrorFlow"
+}

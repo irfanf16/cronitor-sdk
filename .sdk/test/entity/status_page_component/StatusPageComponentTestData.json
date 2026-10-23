@@ -1,0 +1,104 @@
+{
+  "existing": {
+    "status_page_component": {
+      "STATUS_PAGE_COMPONENT00": {
+        "autopublish": true,
+        "children": "s8d",
+        "created": "s8e",
+        "description": "s8f",
+        "group": "s90",
+        "key": "s91",
+        "monitor": "s92",
+        "name": "s93",
+        "position": "s94",
+        "status": "s95",
+        "statuspage": "s96",
+        "type": "s97",
+        "updated": "s98",
+        "uptime_history": "s99",
+        "id": "STATUS_PAGE_COMPONENT00"
+      },
+      "STATUS_PAGE_COMPONENT01": {
+        "autopublish": true,
+        "children": "s119",
+        "created": "s11a",
+        "description": "s11b",
+        "group": "s11c",
+        "key": "s11d",
+        "monitor": "s11e",
+        "name": "s11f",
+        "position": "s120",
+        "status": "s121",
+        "statuspage": "s122",
+        "type": "s123",
+        "updated": "s124",
+        "uptime_history": "s125",
+        "id": "STATUS_PAGE_COMPONENT01"
+      },
+      "STATUS_PAGE_COMPONENT02": {
+        "autopublish": true,
+        "children": "s1a5",
+        "created": "s1a6",
+        "description": "s1a7",
+        "group": "s1a8",
+        "key": "s1a9",
+        "monitor": "s1aa",
+        "name": "s1ab",
+        "position": "s1ac",
+        "status": "s1ad",
+        "statuspage": "s1ae",
+        "type": "s1af",
+        "updated": "s1b0",
+        "uptime_history": "s1b1",
+        "id": "STATUS_PAGE_COMPONENT02"
+      }
+    }
+  },
+  "new": {
+    "status_page_component": {
+      "status_page_component_ref01": {
+        "autopublish": true,
+        "children": "s231",
+        "created": "s232",
+        "description": "s233",
+        "group": "s234",
+        "key": "s235",
+        "monitor": "s236",
+        "name": "s237",
+        "position": "s238",
+        "status": "s239",
+        "statuspage": "s23a",
+        "type": "s23b",
+        "updated": "s23c",
+        "uptime_history": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/statuspage_components": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/statuspage_components": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/statuspage_components/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/statuspage_components/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/statuspage_components/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

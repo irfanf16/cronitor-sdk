@@ -1,0 +1,32 @@
+# Local config / secrets
+*.local.*
+*.local
+
+# Dependencies (no trailing slash: also ignores node_modules SYMLINKS, e.g.
+# ts/node_modules -> shared tree, which a dir-only rule leaves tracked)
+node_modules
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+
+# Editor
+*~
+*.swp
+
+# Credentials and local build output
+.env
+.env.*
+!.env.example
+dist/
+dist-test/
+*.tsbuildinfo
+.sdk/model/sdk.json
+.sdk/test/test.json
+.sdk/model/.model-config/
+.sdk/test/.model-config/
+.jostraca/
+.sdk/.jostraca/

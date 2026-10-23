@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: PrimaryUtility
+    # Subtest: exists
+    ok 1 - exists
+      ---
+      duration_ms: 5.10562
+      type: 'test'
+      ...
+    # Subtest: context-basic
+    ok 2 - context-basic
+      ---
+      duration_ms: 1.347922
+      type: 'test'
+      ...
+    # Subtest: method-basic
+    ok 3 - method-basic
+      ---
+      duration_ms: 1.171601
+      type: 'test'
+      ...
+    # Subtest: headers-basic
+    not ok 4 - headers-basic
+      ---
+      duration_ms: 1.412301
+      type: 'test'
+      location: '/home/irfan/projects/cronitor-sdk/ts/dist-test/utility/PrimaryUtility.test.js:63:26'
+      failureType: 'testCodeFailure'
+      error: |-
+        omni: primary[0]: result mismatch
+          expected: {"content-type":"application/json"}
+          actual:   {"Cronitor-Version":"2025-11-28","content-type":"application/json"}
+          entry:    {"out":{"content-type":"application/json"}}
+      code: 'ERR_TEST_FAILURE'
+      name: 'OmniError'
+      stack: |-
+        fail (/home/irfan/projects/cronitor-sdk/ts/dist-test/vendor/omni/Runner.js:304:12)
+        checkresult (/home/irfan/projects/cronitor-sdk/ts/dist-test/vendor/omni/Runner.js:341:15)
+        runentry (/home/irfan/projects/cronitor-sdk/ts/dist-test/vendor/omni/Runner.js:489:9)
+      ...
+    # Subtest: auth-basic
+    ok 5 - auth-basic
+      ---
+      duration_ms: 8.008294
+      type: 'test'
+      ...
+    # Subtest: params-basic
+    ok 6 - params-basic
+      ---
+      duration_ms: 0.554401
+      type: 'test'
+      ...
+    # Subtest: query-basic
+    ok 7 - query-basic
+      ---
+      duration_ms: 0.598223
+      type: 'test'
+      ...
+    # Subtest: body-basic
+    ok 8 - body-basic
+      ---
+      duration_ms: 1.21735
+      type: 'test'
+      ...
+    # Subtest: findparam-basic
+    ok 9 - findparam-basic
+      ---
+      duration_ms: 0.923793
+      type: 'test'
+      ...
+    # Subtest: fullurl-basic
+    ok 10 - fullurl-basic
+      ---
+      duration_ms: 0.584856
+      type: 'test'
+      ...
+    # Subtest: operator-basic
+    ok 11 - operator-basic
+      ---
+      duration_ms: 0.193398
+      type: 'test'
+      ...
+    # Subtest: options-basic
+    ok 12 - options-basic
+      ---
+      duration_ms: 7.034759
+      type: 'test'
+      ...
+    # Subtest: spec-basic
+    ok 13 - spec-basic
+      ---
+      duration_ms: 9.453836
+      type: 'test'
+      ...
+    # Subtest: reqform-basic
+    ok 14 - reqform-basic
+      ---
+      duration_ms: 1.314567
+      type: 'test'
+      ...
+    # Subtest: resform-basic
+    ok 15 - resform-basic
+      ---
+      duration_ms: 0.733404
+      type: 'test'
+      ...
+    # Subtest: resbasic-basic
+    ok 16 - resbasic-basic
+      ---
+      duration_ms: 2.823744
+      type: 'test'
+      ...
+    # Subtest: resheaders-basic
+    ok 17 - resheaders-basic
+      ---
+      duration_ms: 1.234634
+      type: 'test'
+      ...
+    # Subtest: resbody-basic
+    ok 18 - resbody-basic
+      ---
+      duration_ms: 0.882578
+      type: 'test'
+      ...
+    # Subtest: resbody-empty
+    ok 19 - resbody-empty
+      ---
+      duration_ms: 47.998689
+      type: 'test'
+      ...
+    # Subtest: request-basic
+    ok 20 - request-basic
+      ---
+      duration_ms: 6.364378
+      type: 'test'
+      ...
+    # Subtest: response-basic
+    ok 21 - response-basic
+      ---
+      duration_ms: 1.028363
+      type: 'test'
+      ...
+    # Subtest: done-basic
+    ok 22 - done-basic
+      ---
+      duration_ms: 2.691093
+      type: 'test'
+      ...
+    # Subtest: error-basic
+    ok 23 - error-basic
+      ---
+      duration_ms: 1.923826
+      type: 'test'
+      ...
+    # Subtest: makePoint-basic
+    ok 24 - makePoint-basic
+      ---
+      duration_ms: 0.556028
+      type: 'test'
+      ...
+    # Subtest: makeFetchDef
+    ok 25 - makeFetchDef
+      ---
+      duration_ms: 0.232741
+      type: 'test'
+      ...
+    # Subtest: makeFetchDef-with-body
+    ok 26 - makeFetchDef-with-body
+      ---
+      duration_ms: 0.295202
+      type: 'test'
+      ...
+    # Subtest: featureAdd
+    ok 27 - featureAdd
+      ---
+      duration_ms: 0.11595
+      type: 'test'
+      ...
+    # Subtest: featureHook
+    ok 28 - featureHook
+      ---
+      duration_ms: 0.118194
+      type: 'test'
+      ...
+    # Subtest: featureInit
+    ok 29 - featureInit
+      ---
+      duration_ms: 0.119262
+      type: 'test'
+      ...
+    # Subtest: featureInit-inactive
+    ok 30 - featureInit-inactive
+      ---
+      duration_ms: 0.090521
+      type: 'test'
+      ...
+    # Subtest: fetcher-live
+    ok 31 - fetcher-live
+      ---
+      duration_ms: 1.601253
+      type: 'test'
+      ...
+    # Subtest: fetcher-blocked-test-mode
+    ok 32 - fetcher-blocked-test-mode
+      ---
+      duration_ms: 1.384505
+      type: 'test'
+      ...
+    # Subtest: makeError-no-throw
+    ok 33 - makeError-no-throw
+      ---
+      duration_ms: 0.215125
+      type: 'test'
+      ...
+    # Subtest: path-basic
+    ok 34 - path-basic
+      ---
+      duration_ms: 0.211993
+      type: 'test'
+      ...
+    # Subtest: clean-corpus
+    ok 35 - clean-corpus
+      ---
+      duration_ms: 0.360264
+      type: 'test'
+      ...
+    # Subtest: clean
+    ok 36 - clean
+      ---
+      duration_ms: 0.146196
+      type: 'test'
+      ...
+    1..36
+not ok 1 - PrimaryUtility
+  ---
+  duration_ms: 136.413261
+  type: 'suite'
+  location: '/home/irfan/projects/cronitor-sdk/ts/dist-test/utility/PrimaryUtility.test.js:7:26'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 36
+# suites 1
+# pass 35
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 197.288224

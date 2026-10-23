@@ -1,0 +1,133 @@
+{
+  "existing": {
+    "site": {
+      "SITE00": {
+        "client_key": "sd2",
+        "country_code_denylist": "sd3",
+        "created": "sd4",
+        "errors_enabled": false,
+        "exclude_internal_referrers": true,
+        "filter_bots": false,
+        "filter_browser_extensions": true,
+        "filter_localhost": false,
+        "id": "SITE00",
+        "ingestion_enabled": false,
+        "ip_denylist": "sdc",
+        "key": "sdd",
+        "name": "sde",
+        "origin_allowlist": "sdf",
+        "path_denylist": "se0",
+        "public_report_enabled": false,
+        "public_report_key": "se2",
+        "sampling": 227,
+        "snippet": "se4",
+        "updated": "se5",
+        "webvitals_enabled": true
+      },
+      "SITE01": {
+        "client_key": "s1a4",
+        "country_code_denylist": "s1a5",
+        "created": "s1a6",
+        "errors_enabled": false,
+        "exclude_internal_referrers": true,
+        "filter_bots": false,
+        "filter_browser_extensions": true,
+        "filter_localhost": false,
+        "id": "SITE01",
+        "ingestion_enabled": false,
+        "ip_denylist": "s1ae",
+        "key": "s1af",
+        "name": "s1b0",
+        "origin_allowlist": "s1b1",
+        "path_denylist": "s1b2",
+        "public_report_enabled": false,
+        "public_report_key": "s1b4",
+        "sampling": 437,
+        "snippet": "s1b6",
+        "updated": "s1b7",
+        "webvitals_enabled": true
+      },
+      "SITE02": {
+        "client_key": "s276",
+        "country_code_denylist": "s277",
+        "created": "s278",
+        "errors_enabled": false,
+        "exclude_internal_referrers": true,
+        "filter_bots": false,
+        "filter_browser_extensions": true,
+        "filter_localhost": false,
+        "id": "SITE02",
+        "ingestion_enabled": false,
+        "ip_denylist": "s280",
+        "key": "s281",
+        "name": "s282",
+        "origin_allowlist": "s283",
+        "path_denylist": "s284",
+        "public_report_enabled": false,
+        "public_report_key": "s286",
+        "sampling": 647,
+        "snippet": "s288",
+        "updated": "s289",
+        "webvitals_enabled": true
+      }
+    }
+  },
+  "new": {
+    "site": {
+      "site_ref01": {
+        "client_key": "s348",
+        "country_code_denylist": "s349",
+        "created": "s34a",
+        "errors_enabled": false,
+        "exclude_internal_referrers": true,
+        "filter_bots": false,
+        "filter_browser_extensions": true,
+        "filter_localhost": false,
+        "ingestion_enabled": false,
+        "ip_denylist": "s352",
+        "key": "s353",
+        "name": "s354",
+        "origin_allowlist": "s355",
+        "path_denylist": "s356",
+        "public_report_enabled": false,
+        "public_report_key": "s358",
+        "sampling": 857,
+        "snippet": "s35a",
+        "updated": "s35b",
+        "webvitals_enabled": true
+      }
+    }
+  },
+  "requests": {
+    "POST /api/sites": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/sites/query": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/sites": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/sites/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/sites/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/sites/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

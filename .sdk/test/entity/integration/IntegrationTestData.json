@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "integration": {
+      "INTEGRATION00": {
+        "token": "TOKEN01",
+        "id": "INTEGRATION00"
+      },
+      "INTEGRATION01": {
+        "token": "TOKEN01",
+        "id": "INTEGRATION01"
+      },
+      "INTEGRATION02": {
+        "token": "TOKEN01",
+        "id": "INTEGRATION02"
+      }
+    }
+  },
+  "new": {
+    "integration": {
+      "integration_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /api/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/integrations/connect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/integrations/connect/{token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/integrations/services": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

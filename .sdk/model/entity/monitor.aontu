@@ -1,0 +1,971 @@
+# Entity: monitor
+
+main: kit: entity: monitor: {
+
+  alias: field: {}
+
+  fields: {
+    assertions: {
+      h: "Assertions"
+      n: "assertions"
+      r: false
+      sh: "Assertions such as \"response.code = 200\" or \"metric.queue_depth < 100\"."
+      t: "`$ARRAY`"
+    }
+    attributes: {
+      h: "Attributes"
+      n: "attributes"
+      r: true
+      ro: true
+      sh: "Values derived from the monitor configuration."
+      t: "`$OBJECT`"
+    }
+    badges: {
+      h: "Badges"
+      n: "badges"
+      r: true
+      ro: true
+      t: "`$OBJECT`"
+    }
+    consecutive_alert_threshold: {
+      h: "Consecutive Alert Threshold"
+      n: "consecutive_alert_threshold"
+      r: false
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    defaultName: {
+      h: "Default Name"
+      n: "defaultName"
+      r: false
+      t: "`$STRING`"
+      wo: true
+    }
+    defaultNote: {
+      h: "Default Note"
+      n: "defaultNote"
+      r: false
+      t: "`$STRING`"
+      wo: true
+    }
+    disabled: {
+      h: "Disabled"
+      n: "disabled"
+      r: true
+      ro: true
+      t: "`$BOOLEAN`"
+    }
+    environments: {
+      h: "Environments"
+      n: "environments"
+      r: false
+      t: "`$ARRAY`"
+    }
+    failure_tolerance: {
+      h: "Failure Tolerance"
+      n: "failure_tolerance"
+      r: false
+      sh: "Failures tolerated before an alert."
+      t: "`$INTEGER`"
+    }
+    grace_seconds: {
+      h: "Grace Seconds"
+      n: "grace_seconds"
+      r: false
+      sh: "Seconds to wait after a missed or late event before alerting."
+      t: "`$INTEGER`"
+    }
+    group: {
+      h: "Group"
+      n: "group"
+      r: false
+      sh: "Group key."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    initialized: {
+      h: "Initialized"
+      n: "initialized"
+      r: true
+      ro: true
+      sh: "Whether the monitor has received telemetry."
+      t: "`$BOOLEAN`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+        load: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Unique monitor key."
+      t: "`$STRING`"
+    }
+    latest_event: {
+      h: "Latest Event"
+      n: "latest_event"
+      r: true
+      ro: true
+      sh: "Present when the request has withStatus=true (the default)."
+      t: "`$ANY`"
+    }
+    latest_events: {
+      h: "Latest Events"
+      n: "latest_events"
+      r: true
+      ro: true
+      sh: "Latest event of each kind, keyed by event name."
+      t: "`$OBJECT`"
+    }
+    latest_invocations: {
+      h: "Latest Invocations"
+      n: "latest_invocations"
+      r: true
+      ro: true
+      sh: "Present with withInvocations=true."
+      t: "`$ARRAY`"
+    }
+    latest_issue: {
+      h: "Latest Issue"
+      n: "latest_issue"
+      r: true
+      ro: true
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      t: "`$STRING`"
+    }
+    metric_names: {
+      h: "Metric Names"
+      n: "metric_names"
+      r: true
+      ro: true
+      t: "`$ARRAY`"
+    }
+    monitor_list: {
+      h: "Monitor List"
+      n: "monitor_list"
+      r: false
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      t: "`$STRING`"
+    }
+    next_expected_at: {
+      h: "Next Expected At"
+      n: "next_expected_at"
+      r: true
+      ro: true
+      sh: "Unix timestamp of the next scheduled run."
+      t: "`$NUMBER`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: false
+      t: "`$STRING`"
+    }
+    notify: {
+      h: "Notify"
+      n: "notify"
+      r: false
+      sh: "Notification list keys or inline destinations such as \"email:ops@example.com\"."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 4
+      }
+    }
+    passing: {
+      h: "Passing"
+      n: "passing"
+      r: true
+      ro: true
+      sh: "Present when the request has withStatus=true (the default)."
+      t: "`$BOOLEAN`"
+    }
+    paused: {
+      h: "Paused"
+      n: "paused"
+      op: {
+        create: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        list: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        load: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    paused_until: {
+      fo: "date-time"
+      h: "Paused Until"
+      n: "paused_until"
+      r: true
+      t: "`$STRING`"
+    }
+    platform: {
+      h: "Platform"
+      n: "platform"
+      r: false
+      t: "`$STRING`"
+    }
+    realert_interval: {
+      h: "Realert Interval"
+      n: "realert_interval"
+      r: false
+      sh: "How often to repeat an alert, for example \"8 hours\", or seconds."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    request: {
+      h: "Request"
+      n: "request"
+      r: false
+      sh: "The request a check monitor makes."
+      t: "`$OBJECT`"
+    }
+    running: {
+      h: "Running"
+      n: "running"
+      r: true
+      ro: true
+      sh: "Present when the request has withStatus=true (the default)."
+      t: "`$BOOLEAN`"
+    }
+    schedule_tolerance: {
+      h: "Schedule Tolerance"
+      n: "schedule_tolerance"
+      r: false
+      sh: "Missed runs tolerated before an alert."
+      t: "`$INTEGER`"
+    }
+    schedules: {
+      h: "Schedules"
+      n: "schedules"
+      r: false
+      sh: "Cron expressions, intervals such as \"every 5 minutes\", or RRULEs."
+      t: "`$ARRAY`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: false
+      sh: "RUM site key."
+      t: "`$STRING`"
+    }
+    statuspages: {
+      h: "Statuspages"
+      n: "statuspages"
+      r: false
+      sh: "Status page keys."
+      t: "`$ARRAY`"
+    }
+    tags: {
+      h: "Tags"
+      n: "tags"
+      r: false
+      t: "`$ARRAY`"
+    }
+    timezone: {
+      h: "Timezone"
+      n: "timezone"
+      r: false
+      sh: "IANA timezone."
+      t: "`$STRING`"
+    }
+    tolerated_failures: {
+      de: true
+      h: "Tolerated Failures"
+      n: "tolerated_failures"
+      r: false
+      sh: "Use failure_tolerance."
+      t: "`$INTEGER`"
+      wo: true
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "monitor"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "assertions"
+            "consecutive_alert_threshold"
+            "defaultName"
+            "defaultNote"
+            "environments"
+            "failure_tolerance"
+            "grace_seconds"
+            "group"
+            "key"
+            "metadata"
+            "name"
+            "note"
+            "notify"
+            "paused"
+            "platform"
+            "realert_interval"
+            "request"
+            "schedule_tolerance"
+            "schedules"
+            "site"
+            "statuspages"
+            "tags"
+            "timezone"
+            "tolerated_failures"
+            "type"
+          ]
+          co: {
+            id: "POST /api/monitors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/monitors"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "name"
+          ]
+          co: {
+            id: "POST /api/monitors/clone"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/monitors/clone"
+          q: {
+            "$action": "clone"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+            {
+              lit: "clone"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/monitors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "group"
+                or: "group"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "site"
+                or: "site"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "state"
+                or: "state"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "with_event"
+                or: "withEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_invocation"
+                or: "withInvocations"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status"
+                or: "withStatus"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/monitors"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.monitors`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/monitors/{code}/pause/{hours}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "hour"
+                or: "hours"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "monitor_id"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/monitors/{code}/pause/{hours}"
+          q: {
+            exist: [
+              "hour"
+              "monitor_id"
+            ]
+          }
+          r: {
+            param: {
+              code: "monitor_id"
+              hours: "hour"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+            {
+              var: "monitor_id"
+            }
+            {
+              lit: "pause"
+            }
+            {
+              var: "hour"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/monitors/{code}/pause"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "code"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/monitors/{code}/pause"
+          q: {
+            "$action": "pause"
+            exist: [
+              "code"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+            {
+              var: "code"
+            }
+            {
+              lit: "pause"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/monitors/{code}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "with_event"
+                or: "withEvents"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_invocation"
+                or: "withInvocations"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "with_status"
+                or: "withStatus"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/monitors/{code}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              code: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/monitors/{code}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/monitors/{code}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              code: "id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "monitors"
+          ]
+          co: {
+            id: "DELETE /api/monitors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/monitors"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "monitor_list"
+          ]
+          co: {
+            id: "PUT /api/monitors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/monitors"
+          q: {
+            exist: [
+              "monitor_list"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "monitors"
+            }
+          ]
+          t: {
+            req: "`reqdata.monitor_list`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

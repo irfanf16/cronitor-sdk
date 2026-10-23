@@ -1,0 +1,252 @@
+# Entity: telemetry
+
+main: kit: entity: telemetry: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+    parts: [
+      "api_key"
+      "monitor_key"
+    ]
+    sep: "/"
+  }
+
+  name: "telemetry"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /p/{apiKey}/{monitorKey}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "api_key"
+                or: "apiKey"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "monitor_key"
+                or: "monitorKey"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "host"
+                or: "host"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "message"
+                or: "message"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "metric"
+                or: "metric"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "series"
+                or: "series"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "state"
+                or: "state"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status_code"
+                or: "status_code"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/p/{apiKey}/{monitorKey}"
+          q: {
+            exist: [
+              "api_key"
+              "monitor_key"
+            ]
+          }
+          r: {
+            param: {
+              apiKey: "api_key"
+              monitorKey: "monitor_key"
+            }
+          }
+          s: [
+            {
+              lit: "p"
+            }
+            {
+              var: "api_key"
+            }
+            {
+              var: "monitor_key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /p/{apiKey}/{monitorKey}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "api_key"
+                or: "apiKey"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "monitor_key"
+                or: "monitorKey"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "host"
+                or: "host"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "message"
+                or: "message"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "metric"
+                or: "metric"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "series"
+                or: "series"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "state"
+                or: "state"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status_code"
+                or: "status_code"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/p/{apiKey}/{monitorKey}"
+          q: {
+            exist: [
+              "api_key"
+              "monitor_key"
+            ]
+          }
+          r: {
+            param: {
+              apiKey: "api_key"
+              monitorKey: "monitor_key"
+            }
+          }
+          s: [
+            {
+              lit: "p"
+            }
+            {
+              var: "api_key"
+            }
+            {
+              var: "monitor_key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

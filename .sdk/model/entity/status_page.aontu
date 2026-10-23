@@ -1,0 +1,479 @@
+# Entity: status_page
+
+main: kit: entity: status_page: {
+
+  alias: field: {}
+
+  fields: {
+    access: {
+      h: "Access"
+      n: "access"
+      r: false
+      sh: "* `public` - public * `password` - password"
+      t: "`$STRING`"
+    }
+    allow_search_index: {
+      h: "Allow Search Index"
+      n: "allow_search_index"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    auth_secret: {
+      h: "Auth Secret"
+      n: "auth_secret"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    badge_url_dark: {
+      h: "Badge Url Dark"
+      n: "badge_url_dark"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    badge_url_light: {
+      h: "Badge Url Light"
+      n: "badge_url_light"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    components: {
+      h: "Components"
+      n: "components"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    components_count: {
+      h: "Components Count"
+      n: "components_count"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    custom_domain: {
+      h: "Custom Domain"
+      n: "custom_domain"
+      r: false
+      t: "`$STRING`"
+    }
+    default_time_period: {
+      h: "Default Time Period"
+      n: "default_time_period"
+      r: false
+      sh: "* `24h` - 24h * `7d` - 7d * `30d` - 30d * `90d` - 90d"
+      t: "`$STRING`"
+    }
+    enable_dark_mode: {
+      h: "Enable Dark Mode"
+      n: "enable_dark_mode"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    enable_performance_metrics: {
+      h: "Enable Performance Metrics"
+      n: "enable_performance_metrics"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    environment: {
+      h: "Environment"
+      n: "environment"
+      r: false
+      sh: "Environment key."
+      t: "`$STRING`"
+    }
+    hosted_subdomain: {
+      h: "Hosted Subdomain"
+      n: "hosted_subdomain"
+      r: true
+      t: "`$STRING`"
+    }
+    ip_allowlist: {
+      h: "Ip Allowlist"
+      n: "ip_allowlist"
+      r: false
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    logo_url: {
+      fo: "uri"
+      h: "Logo Url"
+      n: "logo_url"
+      r: false
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    password: {
+      h: "Password"
+      n: "password"
+      r: false
+      t: "`$STRING`"
+      wo: true
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    support_url: {
+      fo: "uri"
+      h: "Support Url"
+      n: "support_url"
+      r: false
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    website_url: {
+      fo: "uri"
+      h: "Website Url"
+      n: "website_url"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "status_page"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "access"
+            "allow_search_index"
+            "custom_domain"
+            "default_time_period"
+            "enable_dark_mode"
+            "enable_performance_metrics"
+            "environment"
+            "hosted_subdomain"
+            "ip_allowlist"
+            "logo_url"
+            "name"
+            "password"
+            "support_url"
+            "website_url"
+          ]
+          co: {
+            id: "POST /api/statuspages"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/statuspages"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "statuspages"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/statuspages"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/statuspages"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "statuspages"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/statuspages/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/statuspages/{key}"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "statuspages"
+            }
+            {
+              var: "key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/statuspages/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/statuspages/{key}"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "statuspages"
+            }
+            {
+              var: "key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "access"
+            "allow_search_index"
+            "custom_domain"
+            "default_time_period"
+            "enable_dark_mode"
+            "enable_performance_metrics"
+            "environment"
+            "hosted_subdomain"
+            "ip_allowlist"
+            "logo_url"
+            "name"
+            "password"
+            "support_url"
+            "website_url"
+          ]
+          co: {
+            id: "PUT /api/statuspages/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/statuspages/{key}"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "statuspages"
+            }
+            {
+              var: "key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,5868 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Cronitor API",
+    "version": "2025-11-28",
+    "description": "Monitor cron jobs, heartbeats, websites, and APIs, and manage alerts, issues, status pages, and Real User Monitoring sites. Reference: https://cronitor.io/docs/api"
+  },
+  "paths": {
+    "/api/aggregates": {
+      "get": {
+        "operationId": "aggregates_retrieve",
+        "tags": [
+          "aggregates"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/metrics-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/environments": {
+      "get": {
+        "operationId": "environments_retrieve",
+        "tags": [
+          "environments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/environments-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "operationId": "environments_create",
+        "tags": [
+          "environments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/environments-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/environments/{key}": {
+      "get": {
+        "operationId": "environments_retrieve_2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.$|\\s}{\\%]{1,150}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/environments-api"
+          }
+        }
+      },
+      "put": {
+        "operationId": "environments_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.$|\\s}{\\%]{1,150}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/environments-api"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "environments_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.$|\\s}{\\%]{1,150}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/groups": {
+      "get": {
+        "operationId": "groups_retrieve",
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "operationId": "groups_create",
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/groups/{key}": {
+      "get": {
+        "operationId": "groups_retrieve_2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9-_.]{2,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        }
+      },
+      "put": {
+        "operationId": "groups_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9-_.]{2,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "groups_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9-_.]{2,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/groups/{key}/pause": {
+      "get": {
+        "operationId": "groups_pause_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9-_.]{2,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        }
+      }
+    },
+    "/api/groups/{key}/pause/{hours}": {
+      "get": {
+        "operationId": "groups_pause_retrieve_2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hours",
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d+$"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9-_.]{2,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/groups-api"
+          }
+        }
+      }
+    },
+    "/api/integrations": {
+      "get": {
+        "operationId": "integrations_retrieve",
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/integrations-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "operationId": "integrations_create",
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/integrations-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "integrations_destroy",
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/integrations/connect": {
+      "post": {
+        "operationId": "integrations_connect_create",
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/integrations-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/integrations/connect/{token}": {
+      "get": {
+        "operationId": "integrations_connect_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/integrations-api"
+          }
+        }
+      }
+    },
+    "/api/integrations/services": {
+      "get": {
+        "operationId": "integrations_services_retrieve",
+        "tags": [
+          "integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/integrations-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/issues": {
+      "get": {
+        "operationId": "issues_list",
+        "summary": "List issues",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "check",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Check monitor keys."
+          },
+          {
+            "in": "query",
+            "name": "component",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Status page component keys."
+          },
+          {
+            "in": "query",
+            "name": "env",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Environment key."
+          },
+          {
+            "in": "query",
+            "name": "group",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Monitor group keys."
+          },
+          {
+            "in": "query",
+            "name": "heartbeat",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Heartbeat monitor keys."
+          },
+          {
+            "in": "query",
+            "name": "job",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Monitor keys."
+          },
+          {
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "-relevance",
+                "-started",
+                "relevance",
+                "started"
+              ]
+            },
+            "description": "Sort order."
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search issue names and monitor names, keys, and codes."
+          },
+          {
+            "in": "query",
+            "name": "severity",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  "degraded_performance",
+                  "maintenance",
+                  "minor_outage",
+                  "missing_data",
+                  "operational",
+                  "outage"
+                ]
+              }
+            },
+            "description": "* `missing_data` - missing_data\n* `operational` - operational\n* `maintenance` - maintenance\n* `degraded_performance` - degraded_performance\n* `minor_outage` - minor_outage\n* `outage` - outage",
+            "explode": true,
+            "style": "form"
+          },
+          {
+            "in": "query",
+            "name": "site",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Site monitor keys."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "identified",
+                  "investigating",
+                  "monitoring",
+                  "resolved",
+                  "unresolved",
+                  "unresolved",
+                  "update"
+                ]
+              }
+            },
+            "description": "* `unresolved` - unresolved\n* `investigating` - investigating\n* `identified` - identified\n* `monitoring` - monitoring\n* `resolved` - resolved\n* `update` - update\n* `unresolved` - unresolved",
+            "explode": true,
+            "style": "form"
+          },
+          {
+            "in": "query",
+            "name": "statuspage",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Monitor tags."
+          },
+          {
+            "in": "query",
+            "name": "time",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Time range, for example 24h, 7d, or 30d."
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Monitor types."
+          },
+          {
+            "in": "query",
+            "name": "withAlertDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include alerts."
+          },
+          {
+            "in": "query",
+            "name": "withComponentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand affected_components."
+          },
+          {
+            "in": "query",
+            "name": "withEnvironmentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand environment."
+          },
+          {
+            "in": "query",
+            "name": "withMonitorDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include monitor details."
+          },
+          {
+            "in": "query",
+            "name": "withStatusPageDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand statuspages."
+          },
+          {
+            "in": "query",
+            "name": "withSummary",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Return a shorter summary of each issue."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "issues"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedIssueList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "issues_create",
+        "summary": "Create an issue",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "withAlertDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include alerts."
+          },
+          {
+            "in": "query",
+            "name": "withComponentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand affected_components."
+          },
+          {
+            "in": "query",
+            "name": "withEnvironmentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand environment."
+          },
+          {
+            "in": "query",
+            "name": "withMonitorDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include monitor details."
+          },
+          {
+            "in": "query",
+            "name": "withStatusPageDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand statuspages."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "issues"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssueRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Issue"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/issues/{key}": {
+      "get": {
+        "operationId": "issues_retrieve",
+        "summary": "Get an issue",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "withAlertDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include alerts."
+          },
+          {
+            "in": "query",
+            "name": "withComponentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand affected_components."
+          },
+          {
+            "in": "query",
+            "name": "withEnvironmentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand environment."
+          },
+          {
+            "in": "query",
+            "name": "withMonitorDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include monitor details."
+          },
+          {
+            "in": "query",
+            "name": "withStatusPageDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand statuspages."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "issues"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Issue"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "issues_update",
+        "summary": "Update an issue",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "withAlertDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include alerts."
+          },
+          {
+            "in": "query",
+            "name": "withComponentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand affected_components."
+          },
+          {
+            "in": "query",
+            "name": "withEnvironmentDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand environment."
+          },
+          {
+            "in": "query",
+            "name": "withMonitorDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include monitor details."
+          },
+          {
+            "in": "query",
+            "name": "withStatusPageDetails",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Expand statuspages."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "issues"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssueRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Issue"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "issues_destroy",
+        "summary": "Delete an issue",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "issues"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/issues/bulk": {
+      "post": {
+        "operationId": "issues_bulk_create",
+        "summary": "Change, assign, or delete issues in bulk",
+        "tags": [
+          "issues"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssueBulkActionsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/issues-api"
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/keys": {
+      "get": {
+        "operationId": "keys_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "search",
+            "required": false,
+            "in": "query",
+            "description": "A search term.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "keys"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedApiKeyList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "keys_create",
+        "tags": [
+          "keys"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKeyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKey"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/keys/{key}": {
+      "get": {
+        "operationId": "keys_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "keys"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKey"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "keys_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "keys"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKeyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKey"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "keys_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "keys"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/maintenance_windows": {
+      "get": {
+        "operationId": "maintenance_windows_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "maintenance_windows"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedMaintenanceWindowList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "maintenance_windows_create",
+        "tags": [
+          "maintenance_windows"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceWindowRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceWindow"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/maintenance_windows/{key}": {
+      "get": {
+        "operationId": "maintenance_windows_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "maintenance_windows"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceWindow"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "maintenance_windows_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "maintenance_windows"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceWindowRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceWindow"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "patch": {
+        "operationId": "maintenance_windows_partial_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "maintenance_windows"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchedMaintenanceWindowRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceWindow"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "maintenance_windows_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "maintenance_windows"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/metrics": {
+      "get": {
+        "operationId": "metrics_retrieve",
+        "tags": [
+          "metrics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/metrics-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/monitors": {
+      "get": {
+        "operationId": "monitors_retrieve",
+        "summary": "List monitors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "env",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Environment key. Defaults to the account default environment."
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "yaml"
+              ]
+            },
+            "description": "yaml returns monitor configuration as YAML."
+          },
+          {
+            "in": "query",
+            "name": "group",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Group key."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number, starting at 1."
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Monitors per page, up to 1000."
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search monitor names and keys."
+          },
+          {
+            "in": "query",
+            "name": "site",
+            "schema": {
+              "type": "string"
+            },
+            "description": "RUM site key."
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "-created",
+                "-name",
+                "created",
+                "name"
+              ]
+            },
+            "description": "Sort order."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "failing",
+                  "passing",
+                  "paused",
+                  "running"
+                ]
+              }
+            },
+            "description": "Monitor states."
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Tags. A monitor must have every tag."
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "check",
+                  "heartbeat",
+                  "job",
+                  "site"
+                ]
+              }
+            },
+            "description": "Monitor types to include."
+          },
+          {
+            "in": "query",
+            "name": "withEvents",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include latest_events."
+          },
+          {
+            "in": "query",
+            "name": "withInvocations",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include latest_invocations."
+          },
+          {
+            "in": "query",
+            "name": "withStatus",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include passing, running, and latest_event. Default true."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "monitors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonitorPage"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        }
+      },
+      "post": {
+        "operationId": "monitors_create",
+        "summary": "Create a monitor",
+        "tags": [
+          "monitors"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonitorRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monitor"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "put": {
+        "operationId": "monitors_update",
+        "description": "Upserts monitors by key. Send an array of monitors, or {\"monitors\": [...]} to receive the same shape back. A YAML body (Content-Type: application/yaml) imports a YAML configuration.",
+        "summary": "Create or update monitors",
+        "tags": [
+          "monitors"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MonitorRequest"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Monitor"
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "monitors_destroy",
+        "summary": "Delete monitors",
+        "tags": [
+          "monitors"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonitorKeysRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonitorBulkDeleteResult"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/monitors/{code}": {
+      "get": {
+        "operationId": "monitors_retrieve_2",
+        "summary": "Get a monitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{3,12}|[\\w|\\W]+$"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "env",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Environment key. Defaults to the account default environment."
+          },
+          {
+            "in": "query",
+            "name": "withEvents",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include latest_events."
+          },
+          {
+            "in": "query",
+            "name": "withInvocations",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include latest_invocations."
+          },
+          {
+            "in": "query",
+            "name": "withStatus",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Include passing, running, and latest_event. Default true."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "monitors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monitor"
+                }
+              }
+            },
+            "description": ""
+          },
+          "404": {
+            "description": "Not found."
+          }
+        }
+      },
+      "delete": {
+        "operationId": "monitors_destroy_2",
+        "summary": "Delete a monitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{3,12}|[\\w|\\W]+$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "monitors"
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted."
+          },
+          "404": {
+            "description": "Not found."
+          }
+        }
+      }
+    },
+    "/api/monitors/{code}/pause": {
+      "get": {
+        "operationId": "monitors_pause_retrieve",
+        "description": "Without hours, pauses indefinitely. hours=0 resumes.",
+        "summary": "Pause or resume a monitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{3,12}|[\\w|\\W]+$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "monitors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonitorPauseResult"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        }
+      }
+    },
+    "/api/monitors/{code}/pause/{hours}": {
+      "get": {
+        "operationId": "monitors_pause_retrieve_2",
+        "description": "Without hours, pauses indefinitely. hours=0 resumes.",
+        "summary": "Pause or resume a monitor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{3,12}|[\\w|\\W]+$"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "hours",
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d+$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "monitors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MonitorPauseResult"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        }
+      }
+    },
+    "/api/monitors/clone": {
+      "post": {
+        "operationId": "monitors_clone_create",
+        "summary": "Clone a monitor",
+        "tags": [
+          "monitors"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonitorCloneRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monitor"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Validation errors, keyed by field."
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/notifications": {
+      "get": {
+        "operationId": "notifications_retrieve",
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/notifications-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "operationId": "notifications_create",
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/notifications-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/notifications/{key}": {
+      "get": {
+        "operationId": "notifications_retrieve_2",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.]{1,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/notifications-api"
+          }
+        }
+      },
+      "put": {
+        "operationId": "notifications_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.]{1,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/notifications-api"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "notifications_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\-_.]{1,50}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "operationId": "search_retrieve",
+        "summary": "Search monitors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search text. Supports job:, check:, heartbeat:, group:, and tag: prefixes."
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "search"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/monitors-api"
+          },
+          "204": {
+            "description": "No query given."
+          }
+        }
+      }
+    },
+    "/api/site_errors": {
+      "get": {
+        "operationId": "site_errors_list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "env",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "environment",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ignored",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "site",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "site_errors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedRumErrorList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/site_errors/{key}": {
+      "get": {
+        "operationId": "site_errors_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "site_errors"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RumError"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/sites": {
+      "get": {
+        "operationId": "sites_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedSiteList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "sites_create",
+        "tags": [
+          "sites"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/sites/{key}": {
+      "get": {
+        "operationId": "sites_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "sites_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "sites"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "sites_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/sites/query": {
+      "post": {
+        "operationId": "sites_query_create",
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response schema not yet published. See https://cronitor.io/docs/sites-api"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/statuspage_components": {
+      "get": {
+        "operationId": "statuspage_components_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "statuspage",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspage_components"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedStatusPageComponentList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "statuspage_components_create",
+        "tags": [
+          "statuspage_components"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusPageComponentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPageComponent"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/statuspage_components/{key}": {
+      "get": {
+        "operationId": "statuspage_components_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspage_components"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPageComponent"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "statuspage_components_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspage_components"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusPageComponentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPageComponent"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "statuspage_components_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{16}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspage_components"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/api/statuspages": {
+      "get": {
+        "operationId": "statuspages_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspages"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedStatusPageList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "statuspages_create",
+        "tags": [
+          "statuspages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusPageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPage"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/statuspages/{key}": {
+      "get": {
+        "operationId": "statuspages_retrieve",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspages"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPage"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "statuspages_update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatusPageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusPage"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "statuspages_destroy",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9\\.\\-\\:]{3,255}$"
+            },
+            "required": true
+          },
+          {
+            "name": "Cronitor-Version",
+            "in": "header",
+            "required": false,
+            "description": "API version. These schemas describe 2025-11-28. Requests without the header get 2020-10-01. https://cronitor.io/docs/api#versioning",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2025-11-28",
+                "2020-10-01"
+              ]
+            }
+          }
+        ],
+        "tags": [
+          "statuspages"
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      }
+    },
+    "/p/{apiKey}/{monitorKey}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cronitor.link"
+          },
+          {
+            "url": "https://eu.cronitor.link",
+            "description": "Received in Germany; stored with all other events."
+          }
+        ],
+        "tags": [
+          "telemetry"
+        ],
+        "summary": "Send a telemetry event",
+        "description": "Records a job or heartbeat event. Every request returns 200, even with an invalid key: authentication happens after ingestion. https://cronitor.io/docs/telemetry-api",
+        "security": [],
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "An API key with the monitor:telemetry scope. Telemetry keys are not secret."
+          },
+          {
+            "name": "monitorKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The monitor key. An unknown key creates a monitor."
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "run",
+                "complete",
+                "fail",
+                "tick",
+                "ok"
+              ]
+            },
+            "description": "Omit to record a tick. ok resets the monitor to passing."
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 2000
+            }
+          },
+          {
+            "name": "series",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Matches a run event with its complete or fail event."
+          },
+          {
+            "name": "metric",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": "count:100"
+              }
+            },
+            "description": "A metric in name:value form. Repeat for multiple metrics."
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "host",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The exit code returned by the job."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event accepted."
+          }
+        },
+        "operationId": "telemetry_send"
+      },
+      "post": {
+        "servers": [
+          {
+            "url": "https://cronitor.link"
+          },
+          {
+            "url": "https://eu.cronitor.link",
+            "description": "Received in Germany; stored with all other events."
+          }
+        ],
+        "tags": [
+          "telemetry"
+        ],
+        "summary": "Send a telemetry event",
+        "description": "Records a job or heartbeat event. Every request returns 200, even with an invalid key: authentication happens after ingestion. https://cronitor.io/docs/telemetry-api",
+        "security": [],
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "An API key with the monitor:telemetry scope. Telemetry keys are not secret."
+          },
+          {
+            "name": "monitorKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The monitor key. An unknown key creates a monitor."
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "run",
+                "complete",
+                "fail",
+                "tick",
+                "ok"
+              ]
+            },
+            "description": "Omit to record a tick. ok resets the monitor to passing."
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 2000
+            }
+          },
+          {
+            "name": "series",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Matches a run event with its complete or fail event."
+          },
+          {
+            "name": "metric",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": "count:100"
+              }
+            },
+            "description": "A metric in name:value form. Repeat for multiple metrics."
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "host",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The exit code returned by the job."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event accepted."
+          }
+        },
+        "operationId": "telemetry_send_post"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccessEnum": {
+        "enum": [
+          "public",
+          "password"
+        ],
+        "type": "string",
+        "description": "* `public` - public\n* `password` - password"
+      },
+      "ActionEnum": {
+        "enum": [
+          "assign_to",
+          "change_state",
+          "delete"
+        ],
+        "type": "string",
+        "description": "* `assign_to` - assign_to\n* `change_state` - change_state\n* `delete` - delete"
+      },
+      "ApiKey": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "kind": {
+            "$ref": "#/components/schemas/KindEnum"
+          },
+          "scopes": {
+            "nullable": true
+          },
+          "immutable": {
+            "type": "string",
+            "readOnly": true
+          },
+          "last_used": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "created",
+          "immutable",
+          "key",
+          "last_used",
+          "name",
+          "updated"
+        ]
+      },
+      "ApiKeyRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "kind": {
+            "$ref": "#/components/schemas/KindEnum"
+          },
+          "scopes": {
+            "nullable": true
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DefaultTimePeriodEnum": {
+        "enum": [
+          "24h",
+          "7d",
+          "30d",
+          "90d"
+        ],
+        "type": "string",
+        "description": "* `24h` - 24h\n* `7d` - 7d\n* `30d` - 30d\n* `90d` - 90d"
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "stamp": {
+            "type": "number",
+            "format": "double"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true,
+            "description": "Event message. Null when the event has none."
+          },
+          "event": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventEnum"
+              }
+            ],
+            "readOnly": true
+          },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Built-in and custom metric values, such as {\"duration\": 1.25, \"queue_depth\": 12}. An empty object when the event has none."
+          },
+          "client": {
+            "type": "string",
+            "nullable": true,
+            "description": "Client that sent the event. Null when unknown."
+          },
+          "host": {
+            "type": "string",
+            "nullable": true,
+            "description": "Host that sent the event. Null when unknown."
+          },
+          "ip": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client",
+          "event",
+          "host",
+          "ip",
+          "metrics",
+          "msg",
+          "stamp"
+        ]
+      },
+      "EventEnum": {
+        "enum": [
+          "req-ok",
+          "req-fail",
+          "req-trig",
+          "run",
+          "complete",
+          "fail",
+          "ok",
+          "pause",
+          "tick",
+          "logs",
+          "skipped"
+        ],
+        "type": "string",
+        "description": "* `req-ok` - req-ok\n* `req-fail` - req-fail\n* `req-trig` - req-trig\n* `run` - run\n* `complete` - complete\n* `fail` - fail\n* `ok` - ok\n* `pause` - pause\n* `tick` - tick\n* `logs` - logs\n* `skipped` - skipped"
+      },
+      "EventRequest": {
+        "type": "object",
+        "properties": {
+          "stamp": {
+            "type": "number",
+            "format": "double"
+          },
+          "client": {
+            "type": "string",
+            "nullable": true,
+            "description": "Client that sent the event. Null when unknown."
+          },
+          "host": {
+            "type": "string",
+            "nullable": true,
+            "description": "Host that sent the event. Null when unknown."
+          },
+          "ip": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "client",
+          "host",
+          "ip",
+          "stamp"
+        ]
+      },
+      "IncidentUpdate": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "state": {
+            "$ref": "#/components/schemas/StateEnum"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "created_by": {
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          }
+        },
+        "required": [
+          "created",
+          "updated"
+        ]
+      },
+      "IncidentUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 2048
+          },
+          "state": {
+            "$ref": "#/components/schemas/StateEnum"
+          },
+          "created_by": {
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          }
+        }
+      },
+      "Issue": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "severity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SeverityEnum"
+              },
+              {
+                "$ref": "#/components/schemas/NullEnum"
+              }
+            ]
+          },
+          "state": {
+            "$ref": "#/components/schemas/StateEnum"
+          },
+          "updates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncidentUpdate"
+            }
+          },
+          "started": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ended": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true
+          },
+          "duration": {
+            "type": "integer",
+            "readOnly": true,
+            "description": "Seconds of downtime."
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "affected_components": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page component keys."
+          },
+          "monitors": {
+            "type": "array",
+            "nullable": true,
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Null unless withMonitorDetails=true, which includes monitor details."
+          },
+          "alerts": {
+            "type": "array",
+            "nullable": true,
+            "readOnly": true,
+            "items": {
+              "type": "object"
+            },
+            "description": "Present with withAlertDetails=true."
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key."
+          },
+          "created_by": {
+            "readOnly": true,
+            "nullable": true
+          },
+          "assigned_to": {
+            "type": "string",
+            "format": "email",
+            "nullable": true,
+            "description": "Email address of the assigned team member."
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "alerts",
+          "created",
+          "created_by",
+          "duration",
+          "ended",
+          "key",
+          "monitors",
+          "name",
+          "updated"
+        ]
+      },
+      "IssueBulkActionsRequest": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/ActionEnum"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Issue keys."
+          },
+          "state": {
+            "$ref": "#/components/schemas/StateEnum"
+          },
+          "assign_to": {
+            "type": "string",
+            "format": "email",
+            "nullable": true,
+            "description": "Email address of the assigned team member."
+          }
+        },
+        "required": [
+          "action",
+          "issues"
+        ]
+      },
+      "IssueRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SeverityEnum"
+              },
+              {
+                "$ref": "#/components/schemas/NullEnum"
+              }
+            ]
+          },
+          "state": {
+            "$ref": "#/components/schemas/StateEnum"
+          },
+          "updates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncidentUpdateRequest"
+            }
+          },
+          "started": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "affected_components": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page component keys."
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key."
+          },
+          "assigned_to": {
+            "type": "string",
+            "format": "email",
+            "nullable": true,
+            "description": "Email address of the assigned team member."
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "KindEnum": {
+        "enum": [
+          "telemetry",
+          "sdk",
+          "custom"
+        ],
+        "type": "string",
+        "description": "* `telemetry` - Telemetry\n* `sdk` - SDK Integration\n* `custom` - Custom"
+      },
+      "MaintenanceWindow": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "affects_all_monitors": {
+            "type": "boolean"
+          },
+          "affects_statuspage_components": {
+            "type": "boolean"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key.",
+            "nullable": true
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "monitors": {
+            "type": "array",
+            "items": {}
+          },
+          "groups": {
+            "type": "array",
+            "items": {}
+          },
+          "all_affected_monitors": {
+            "type": "string",
+            "readOnly": true
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Returns the total duration of the maintenance window in seconds.",
+            "readOnly": true
+          },
+          "state": {
+            "type": "string",
+            "description": "Returns whether the window is currently past|ongoing|upcoming.",
+            "readOnly": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "all_affected_monitors",
+          "created",
+          "duration",
+          "end",
+          "key",
+          "name",
+          "start",
+          "state",
+          "updated"
+        ]
+      },
+      "MaintenanceWindowRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "affects_all_monitors": {
+            "type": "boolean"
+          },
+          "affects_statuspage_components": {
+            "type": "boolean"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key.",
+            "nullable": true
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "monitors": {
+            "type": "array",
+            "items": {}
+          },
+          "groups": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "end",
+          "name",
+          "start"
+        ]
+      },
+      "Monitor": {
+        "type": "object",
+        "description": "V5 serializer replaces 'schedule' with 'schedules' to support multiple schedule expressions.\nThis is used for monitors with multiple cron expressions or Windows Task Scheduler RRULE triggers.\n\nAlso consolidates public_badge_url and public_detailed_badge_url into a 'badges' object.",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "readOnly": true,
+            "description": "Values derived from the monitor configuration.",
+            "nullable": true
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Assertions such as \"response.code = 200\" or \"metric.queue_depth < 100\"."
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "disabled": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "failure_tolerance": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Failures tolerated before an alert. Default 0."
+          },
+          "grace_seconds": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Seconds to wait after a missed or late event before alerting."
+          },
+          "consecutive_alert_threshold": {
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1
+          },
+          "group": {
+            "type": "string",
+            "nullable": true,
+            "description": "Group key."
+          },
+          "initialized": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true,
+            "description": "Whether the monitor has received telemetry."
+          },
+          "key": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique monitor key. Required when creating a monitor."
+          },
+          "latest_event": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Event"
+              }
+            ],
+            "nullable": true,
+            "readOnly": true,
+            "description": "Present when the request has withStatus=true (the default)."
+          },
+          "latest_events": {
+            "type": "object",
+            "nullable": true,
+            "readOnly": true,
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "description": "Latest event of each kind, keyed by event name. Present with withEvents=true."
+          },
+          "latest_issue": {
+            "type": "object",
+            "nullable": true,
+            "readOnly": true,
+            "properties": {
+              "stamp": {
+                "type": "number",
+                "description": "Unix timestamp the issue started."
+              },
+              "state": {
+                "type": "string"
+              }
+            }
+          },
+          "latest_invocations": {
+            "type": "array",
+            "nullable": true,
+            "readOnly": true,
+            "items": {
+              "type": "object"
+            },
+            "description": "Present with withInvocations=true."
+          },
+          "metric_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "badges": {
+            "type": "object",
+            "nullable": true,
+            "readOnly": true,
+            "properties": {
+              "simple": {
+                "type": "string",
+                "format": "uri"
+              },
+              "detailed": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "metadata": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "next_expected_at": {
+            "type": "number",
+            "nullable": true,
+            "readOnly": true,
+            "description": "Unix timestamp of the next scheduled run. Null when the monitor has no schedule. May include fractional seconds."
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "notify": {
+            "description": "Notification list keys or inline destinations such as \"email:ops@example.com\". Omit to use the default list.",
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "alerts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "events": {
+                    "description": "true alerts on every tick. Otherwise run and complete flags.",
+                    "oneOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "run": {
+                            "type": "boolean"
+                          },
+                          "complete": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "passing": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true,
+            "description": "Present when the request has withStatus=true (the default)."
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "realert_interval": {
+            "nullable": true,
+            "description": "How often to repeat an alert, for example \"8 hours\", or seconds.",
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "request": {
+            "type": "object",
+            "nullable": true,
+            "description": "The request a check monitor makes. Required when type is check.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "http(s) URL for an HTTP check, or host:port for TCP and UDP."
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "GET",
+                  "POST",
+                  "PUT",
+                  "PATCH",
+                  "HEAD",
+                  "TCP",
+                  "UDP"
+                ],
+                "description": "HTTP method, or TCP or UDP."
+              },
+              "body": {
+                "type": "string",
+                "nullable": true,
+                "description": "Request body. Null when the check sends none."
+              },
+              "headers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "cookies": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "timeout_seconds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 60,
+                "description": "Seconds before the check times out. Free plans allow up to 30; paid plans allow up to 60."
+              },
+              "regions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "follow_redirects": {
+                "type": "boolean"
+              },
+              "verify_ssl": {
+                "type": "boolean"
+              },
+              "use_ipv6": {
+                "type": "boolean"
+              }
+            }
+          },
+          "running": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true,
+            "description": "Present when the request has withStatus=true (the default)."
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Cron expressions, intervals such as \"every 5 minutes\", or RRULEs."
+          },
+          "schedule_tolerance": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Missed runs tolerated before an alert. Default 0."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true,
+            "description": "IANA timezone. Defaults to the account timezone."
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeEnum"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Environment key. Requests also accept {\"key\": \"<environment>\"}."
+            }
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "site": {
+            "type": "string",
+            "nullable": true,
+            "description": "RUM site key."
+          }
+        },
+        "required": [
+          "attributes",
+          "badges",
+          "created",
+          "disabled",
+          "initialized",
+          "latest_event",
+          "latest_events",
+          "latest_invocations",
+          "latest_issue",
+          "metric_names",
+          "next_expected_at",
+          "passing",
+          "running"
+        ]
+      },
+      "MonitorBulkDeleteResult": {
+        "type": "object",
+        "properties": {
+          "deleted_count": {
+            "type": "integer"
+          },
+          "requested_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "deleted_count",
+          "requested_count"
+        ]
+      },
+      "MonitorCloneRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Key of the monitor to clone."
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Defaults to \"Clone of <name>\"."
+          }
+        },
+        "required": [
+          "key"
+        ]
+      },
+      "MonitorKeysRequest": {
+        "type": "object",
+        "properties": {
+          "monitors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "monitors"
+        ]
+      },
+      "MonitorPage": {
+        "type": "object",
+        "properties": {
+          "monitors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Monitor"
+            }
+          },
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_monitor_count": {
+            "type": "integer"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "monitors",
+          "page",
+          "page_size",
+          "total_monitor_count",
+          "version"
+        ]
+      },
+      "MonitorPauseResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "paused_until": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "required": [
+          "key",
+          "paused",
+          "paused_until"
+        ]
+      },
+      "MonitorRequest": {
+        "type": "object",
+        "description": "V5 serializer replaces 'schedule' with 'schedules' to support multiple schedule expressions.\nThis is used for monitors with multiple cron expressions or Windows Task Scheduler RRULE triggers.\n\nAlso consolidates public_badge_url and public_detailed_badge_url into a 'badges' object.",
+        "properties": {
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Assertions such as \"response.code = 200\" or \"metric.queue_depth < 100\"."
+          },
+          "failure_tolerance": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Failures tolerated before an alert. Default 0."
+          },
+          "grace_seconds": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Seconds to wait after a missed or late event before alerting."
+          },
+          "consecutive_alert_threshold": {
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1
+          },
+          "group": {
+            "type": "string",
+            "nullable": true,
+            "description": "Group key."
+          },
+          "key": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique monitor key. Required when creating a monitor."
+          },
+          "metadata": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "notify": {
+            "description": "Notification list keys or inline destinations such as \"email:ops@example.com\". Omit to use the default list.",
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "alerts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "events": {
+                    "description": "true alerts on every tick. Otherwise run and complete flags.",
+                    "oneOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "run": {
+                            "type": "boolean"
+                          },
+                          "complete": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "realert_interval": {
+            "nullable": true,
+            "description": "How often to repeat an alert, for example \"8 hours\", or seconds.",
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "request": {
+            "type": "object",
+            "nullable": true,
+            "description": "The request a check monitor makes. Required when type is check.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "http(s) URL for an HTTP check, or host:port for TCP and UDP."
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "GET",
+                  "POST",
+                  "PUT",
+                  "PATCH",
+                  "HEAD",
+                  "TCP",
+                  "UDP"
+                ],
+                "description": "HTTP method, or TCP or UDP."
+              },
+              "body": {
+                "type": "string",
+                "nullable": true,
+                "description": "Request body. Null when the check sends none."
+              },
+              "headers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "cookies": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "timeout_seconds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 60,
+                "description": "Seconds before the check times out. Free plans allow up to 30; paid plans allow up to 60."
+              },
+              "regions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "follow_redirects": {
+                "type": "boolean"
+              },
+              "verify_ssl": {
+                "type": "boolean"
+              },
+              "use_ipv6": {
+                "type": "boolean"
+              }
+            }
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Cron expressions, intervals such as \"every 5 minutes\", or RRULEs."
+          },
+          "schedule_tolerance": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Missed runs tolerated before an alert. Default 0."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true,
+            "description": "IANA timezone. Defaults to the account timezone."
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeEnum"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Environment key. Requests also accept {\"key\": \"<environment>\"}."
+            }
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "site": {
+            "type": "string",
+            "nullable": true,
+            "description": "RUM site key."
+          },
+          "defaultName": {
+            "type": "string",
+            "writeOnly": true,
+            "minLength": 1
+          },
+          "defaultNote": {
+            "type": "string",
+            "writeOnly": true,
+            "minLength": 1
+          },
+          "tolerated_failures": {
+            "type": "integer",
+            "writeOnly": true,
+            "deprecated": true,
+            "description": "Use failure_tolerance."
+          }
+        }
+      },
+      "NullEnum": {
+        "enum": [
+          null
+        ]
+      },
+      "PaginatedApiKeyList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiKey"
+            }
+          }
+        }
+      },
+      "PaginatedIssueList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Issue"
+            }
+          }
+        }
+      },
+      "PaginatedMaintenanceWindowList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaintenanceWindow"
+            }
+          }
+        }
+      },
+      "PaginatedRumErrorList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RumError"
+            }
+          }
+        }
+      },
+      "PaginatedSiteList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Site"
+            }
+          }
+        }
+      },
+      "PaginatedStatusPageComponentList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatusPageComponent"
+            }
+          }
+        }
+      },
+      "PaginatedStatusPageList": {
+        "type": "object",
+        "required": [
+          "page",
+          "page_count",
+          "page_size",
+          "total_count",
+          "data"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatusPage"
+            }
+          }
+        }
+      },
+      "PatchedMaintenanceWindowRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "affects_all_monitors": {
+            "type": "boolean"
+          },
+          "affects_statuspage_components": {
+            "type": "boolean"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key.",
+            "nullable": true
+          },
+          "statuspages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Status page keys."
+          },
+          "monitors": {
+            "type": "array",
+            "items": {}
+          },
+          "groups": {
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
+      "RumError": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "ignored": {
+            "type": "boolean"
+          },
+          "error_type": {
+            "type": "string",
+            "readOnly": true,
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "readOnly": true,
+            "nullable": true
+          },
+          "filename": {
+            "type": "string",
+            "readOnly": true,
+            "nullable": true
+          },
+          "lineno": {
+            "type": "integer",
+            "readOnly": true,
+            "nullable": true
+          },
+          "colno": {
+            "type": "integer",
+            "readOnly": true,
+            "nullable": true
+          },
+          "first_seen": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "last_seen": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "occurrences": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "latest_event": {
+            "type": "string",
+            "readOnly": true
+          },
+          "site": {
+            "type": "string",
+            "nullable": true,
+            "description": "RUM site key."
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key."
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "colno",
+          "created",
+          "environment",
+          "error_type",
+          "filename",
+          "first_seen",
+          "key",
+          "last_seen",
+          "latest_event",
+          "lineno",
+          "message",
+          "occurrences",
+          "site",
+          "updated"
+        ]
+      },
+      "SeverityEnum": {
+        "enum": [
+          "missing_data",
+          "operational",
+          "maintenance",
+          "degraded_performance",
+          "minor_outage",
+          "outage"
+        ],
+        "type": "string",
+        "description": "* `missing_data` - missing_data\n* `operational` - operational\n* `maintenance` - maintenance\n* `degraded_performance` - degraded_performance\n* `minor_outage` - minor_outage\n* `outage` - outage"
+      },
+      "Site": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "client_key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "public_report_enabled": {
+            "type": "boolean"
+          },
+          "public_report_key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "webvitals_enabled": {
+            "type": "boolean"
+          },
+          "errors_enabled": {
+            "type": "boolean"
+          },
+          "filter_localhost": {
+            "type": "boolean"
+          },
+          "filter_bots": {
+            "type": "boolean"
+          },
+          "filter_browser_extensions": {
+            "type": "boolean"
+          },
+          "exclude_internal_referrers": {
+            "type": "boolean"
+          },
+          "origin_allowlist": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "country_code_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "path_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "snippet": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "sampling": {
+            "type": "integer",
+            "maximum": 100,
+            "minimum": 0
+          },
+          "ingestion_enabled": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "client_key",
+          "created",
+          "ingestion_enabled",
+          "key",
+          "name",
+          "public_report_key",
+          "snippet",
+          "updated"
+        ]
+      },
+      "SiteRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "public_report_enabled": {
+            "type": "boolean"
+          },
+          "webvitals_enabled": {
+            "type": "boolean"
+          },
+          "errors_enabled": {
+            "type": "boolean"
+          },
+          "filter_localhost": {
+            "type": "boolean"
+          },
+          "filter_bots": {
+            "type": "boolean"
+          },
+          "filter_browser_extensions": {
+            "type": "boolean"
+          },
+          "exclude_internal_referrers": {
+            "type": "boolean"
+          },
+          "origin_allowlist": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "country_code_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "path_denylist": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampling": {
+            "type": "integer",
+            "maximum": 100,
+            "minimum": 0
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "StateEnum": {
+        "enum": [
+          "unresolved",
+          "investigating",
+          "identified",
+          "monitoring",
+          "resolved",
+          "update"
+        ],
+        "type": "string",
+        "description": "* `unresolved` - unresolved\n* `investigating` - investigating\n* `identified` - identified\n* `monitoring` - monitoring\n* `resolved` - resolved\n* `update` - update"
+      },
+      "StatusPage": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "logo_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "website_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "maxLength": 2000
+          },
+          "support_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "maxLength": 2000
+          },
+          "allow_search_index": {
+            "type": "boolean"
+          },
+          "enable_performance_metrics": {
+            "type": "boolean"
+          },
+          "default_time_period": {
+            "$ref": "#/components/schemas/DefaultTimePeriodEnum"
+          },
+          "enable_dark_mode": {
+            "type": "boolean"
+          },
+          "hosted_subdomain": {
+            "type": "string",
+            "maxLength": 63
+          },
+          "custom_domain": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 255
+          },
+          "access": {
+            "$ref": "#/components/schemas/AccessEnum"
+          },
+          "auth_secret": {
+            "type": "string",
+            "readOnly": true
+          },
+          "ip_allowlist": {
+            "type": "string",
+            "nullable": true
+          },
+          "components": {
+            "type": "string",
+            "readOnly": true
+          },
+          "components_count": {
+            "type": "string",
+            "readOnly": true
+          },
+          "status": {
+            "type": "string",
+            "readOnly": true
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key.",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "string",
+            "readOnly": true
+          },
+          "badge_url_light": {
+            "type": "string",
+            "readOnly": true
+          },
+          "badge_url_dark": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "auth_secret",
+          "badge_url_dark",
+          "badge_url_light",
+          "components",
+          "components_count",
+          "created",
+          "hosted_subdomain",
+          "key",
+          "metadata",
+          "name",
+          "status",
+          "updated"
+        ]
+      },
+      "StatusPageComponent": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "position": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "type": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2048
+          },
+          "status": {
+            "type": "string",
+            "readOnly": true
+          },
+          "uptime_history": {
+            "type": "string",
+            "readOnly": true
+          },
+          "monitor": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "statuspage": {
+            "type": "string"
+          },
+          "autopublish": {
+            "type": "boolean"
+          },
+          "children": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "children",
+          "created",
+          "key",
+          "status",
+          "type",
+          "updated",
+          "uptime_history"
+        ]
+      },
+      "StatusPageComponentRequest": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2048
+          },
+          "monitor": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "statuspage": {
+            "type": "string"
+          },
+          "autopublish": {
+            "type": "boolean"
+          }
+        }
+      },
+      "StatusPageRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "logo_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "minLength": 1
+          },
+          "website_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "support_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "allow_search_index": {
+            "type": "boolean"
+          },
+          "enable_performance_metrics": {
+            "type": "boolean"
+          },
+          "default_time_period": {
+            "$ref": "#/components/schemas/DefaultTimePeriodEnum"
+          },
+          "enable_dark_mode": {
+            "type": "boolean"
+          },
+          "hosted_subdomain": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 63
+          },
+          "custom_domain": {
+            "type": "string",
+            "nullable": true,
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "access": {
+            "$ref": "#/components/schemas/AccessEnum"
+          },
+          "password": {
+            "type": "string",
+            "writeOnly": true,
+            "nullable": true
+          },
+          "ip_allowlist": {
+            "type": "string",
+            "nullable": true
+          },
+          "environment": {
+            "type": "string",
+            "description": "Environment key.",
+            "nullable": true
+          }
+        },
+        "required": [
+          "hosted_subdomain",
+          "name"
+        ]
+      },
+      "TypeEnum": {
+        "type": "string",
+        "enum": [
+          "job",
+          "heartbeat",
+          "check",
+          "site"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "type": "http",
+        "scheme": "basic",
+        "description": "Send an API key as the HTTP Basic username with an empty password, for example `curl -u API_KEY: https://cronitor.io/api/monitors`. Keys carry scopes: https://cronitor.io/docs/api-keys"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://cronitor.io"
+    }
+  ],
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "monitors",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/monitors-api"
+      }
+    },
+    {
+      "name": "search",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/monitors-api"
+      }
+    },
+    {
+      "name": "groups",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/groups-api"
+      }
+    },
+    {
+      "name": "notifications",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/notifications-api"
+      }
+    },
+    {
+      "name": "integrations",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/integrations-api"
+      }
+    },
+    {
+      "name": "environments",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/environments-api"
+      }
+    },
+    {
+      "name": "issues",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/issues-api"
+      }
+    },
+    {
+      "name": "maintenance_windows",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/maintenance-windows-api"
+      }
+    },
+    {
+      "name": "metrics",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/metrics-api"
+      }
+    },
+    {
+      "name": "aggregates",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/metrics-api"
+      }
+    },
+    {
+      "name": "keys",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/api-keys"
+      }
+    },
+    {
+      "name": "statuspages",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/statuspages-api"
+      }
+    },
+    {
+      "name": "statuspage_components",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/statuspages-api"
+      }
+    },
+    {
+      "name": "sites",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/sites-api"
+      }
+    },
+    {
+      "name": "site_errors",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/sites-api"
+      }
+    },
+    {
+      "name": "telemetry",
+      "description": "Send events from jobs and heartbeats. Served from cronitor.link.",
+      "externalDocs": {
+        "url": "https://cronitor.io/docs/telemetry-api"
+      }
+    }
+  ]
+}

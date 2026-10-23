@@ -1,0 +1,28 @@
+# BasicMetricFlow
+
+main: kit: flow: BasicMetricFlow:
+{
+  entity: "metric",
+  kind: "basic",
+  name: "BasicMetricFlow",
+  step: [
+    {
+      i: {
+        ref: "metric_ref01",
+        srcdatavar: "metric_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-metric_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMetricFlow"
+}

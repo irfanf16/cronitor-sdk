@@ -1,0 +1,234 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 16
+  metrics: count: path: 37
+  metrics: count: method: 72
+
+  entity: aggregate: {
+    path: "/api/aggregates": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: api_key: {
+    path: "/api/keys": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/keys/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: environment: {
+    path: "/api/environments": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/api/environments/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: group: {
+    path: "/api/groups": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/api/groups/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/groups/{key}/pause": {
+      action: "pause": {}
+      op: load: method: *GET
+    }
+    path: "/api/groups/{key}/pause/{hours}": {
+      rename: param: "hours": *"hour"
+      rename: param: "key": *"group_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: integration: {
+    path: "/api/integrations": {
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/api/integrations/connect": {
+      action: "connect": {}
+      op: create: method: *POST
+    }
+    path: "/api/integrations/connect/{token}": {
+      op: load: method: *GET
+    }
+    path: "/api/integrations/services": {
+      action: "service": {}
+      op: load: method: *GET
+    }
+  }
+
+  entity: issue: {
+    path: "/api/issues": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/issues/bulk": {
+      action: "bulk": {}
+      op: create: method: *POST
+    }
+    path: "/api/issues/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: maintenance_window: {
+    path: "/api/maintenance_windows": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/maintenance_windows/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: metric: {
+    path: "/api/metrics": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: monitor: {
+    path: "/api/monitors": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.monitors`")|top
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/api/monitors/clone": {
+      action: "clone": {}
+      op: create: method: *POST
+    }
+    path: "/api/monitors/{code}": {
+      rename: param: "code": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/api/monitors/{code}/pause": {
+      action: "pause": {}
+      op: load: method: *GET
+    }
+    path: "/api/monitors/{code}/pause/{hours}": {
+      rename: param: "code": *"monitor_id"
+      rename: param: "hours": *"hour"
+      op: load: method: *GET
+    }
+  }
+
+  entity: notification: {
+    path: "/api/notifications": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/api/notifications/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: rum_error: {
+    path: "/api/site_errors": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/site_errors/{key}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: search: {
+    path: "/api/search": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: site: {
+    path: "/api/sites": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/sites/query": {
+      action: "query": {}
+      op: create: method: *POST
+    }
+    path: "/api/sites/{key}": {
+      rename: param: "key": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: status_page: {
+    path: "/api/statuspages": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/statuspages/{key}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: status_page_component: {
+    path: "/api/statuspage_components": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/api/statuspage_components/{key}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: telemetry: {
+    path: "/p/{apiKey}/{monitorKey}": {
+      rename: param: "apiKey": *"api_key"
+      rename: param: "monitorKey": *"monitor_key"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+}

@@ -1,0 +1,144 @@
+{
+  "existing": {
+    "status_page": {
+      "STATUS_PAGE00": {
+        "access": "sf0",
+        "allow_search_index": false,
+        "auth_secret": "sf2",
+        "badge_url_dark": "sf3",
+        "badge_url_light": "sf4",
+        "components": "sf5",
+        "components_count": "sf6",
+        "created": "sf7",
+        "custom_domain": "sf8",
+        "default_time_period": "sf9",
+        "enable_dark_mode": true,
+        "enable_performance_metrics": false,
+        "environment": "sfc",
+        "hosted_subdomain": "sfd",
+        "ip_allowlist": "sfe",
+        "key": "sff",
+        "logo_url": "s100",
+        "metadata": "s101",
+        "name": "s102",
+        "password": "s103",
+        "status": "s104",
+        "support_url": "s105",
+        "updated": "s106",
+        "website_url": "s107",
+        "id": "STATUS_PAGE00"
+      },
+      "STATUS_PAGE01": {
+        "access": "s1e0",
+        "allow_search_index": false,
+        "auth_secret": "s1e2",
+        "badge_url_dark": "s1e3",
+        "badge_url_light": "s1e4",
+        "components": "s1e5",
+        "components_count": "s1e6",
+        "created": "s1e7",
+        "custom_domain": "s1e8",
+        "default_time_period": "s1e9",
+        "enable_dark_mode": true,
+        "enable_performance_metrics": false,
+        "environment": "s1ec",
+        "hosted_subdomain": "s1ed",
+        "ip_allowlist": "s1ee",
+        "key": "s1ef",
+        "logo_url": "s1f0",
+        "metadata": "s1f1",
+        "name": "s1f2",
+        "password": "s1f3",
+        "status": "s1f4",
+        "support_url": "s1f5",
+        "updated": "s1f6",
+        "website_url": "s1f7",
+        "id": "STATUS_PAGE01"
+      },
+      "STATUS_PAGE02": {
+        "access": "s2d0",
+        "allow_search_index": false,
+        "auth_secret": "s2d2",
+        "badge_url_dark": "s2d3",
+        "badge_url_light": "s2d4",
+        "components": "s2d5",
+        "components_count": "s2d6",
+        "created": "s2d7",
+        "custom_domain": "s2d8",
+        "default_time_period": "s2d9",
+        "enable_dark_mode": true,
+        "enable_performance_metrics": false,
+        "environment": "s2dc",
+        "hosted_subdomain": "s2dd",
+        "ip_allowlist": "s2de",
+        "key": "s2df",
+        "logo_url": "s2e0",
+        "metadata": "s2e1",
+        "name": "s2e2",
+        "password": "s2e3",
+        "status": "s2e4",
+        "support_url": "s2e5",
+        "updated": "s2e6",
+        "website_url": "s2e7",
+        "id": "STATUS_PAGE02"
+      }
+    }
+  },
+  "new": {
+    "status_page": {
+      "status_page_ref01": {
+        "access": "s3c0",
+        "allow_search_index": false,
+        "auth_secret": "s3c2",
+        "badge_url_dark": "s3c3",
+        "badge_url_light": "s3c4",
+        "components": "s3c5",
+        "components_count": "s3c6",
+        "created": "s3c7",
+        "custom_domain": "s3c8",
+        "default_time_period": "s3c9",
+        "enable_dark_mode": true,
+        "enable_performance_metrics": false,
+        "environment": "s3cc",
+        "hosted_subdomain": "s3cd",
+        "ip_allowlist": "s3ce",
+        "key": "s3cf",
+        "logo_url": "s3d0",
+        "metadata": "s3d1",
+        "name": "s3d2",
+        "password": "s3d3",
+        "status": "s3d4",
+        "support_url": "s3d5",
+        "updated": "s3d6",
+        "website_url": "s3d7"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/statuspages": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/statuspages": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/statuspages/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/statuspages/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/statuspages/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

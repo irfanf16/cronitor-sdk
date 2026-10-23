@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "notification": {
+      "NOTIFICATION00": {
+        "id": "NOTIFICATION00"
+      },
+      "NOTIFICATION01": {
+        "id": "NOTIFICATION01"
+      },
+      "NOTIFICATION02": {
+        "id": "NOTIFICATION02"
+      }
+    }
+  },
+  "new": {
+    "notification": {
+      "notification_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /api/notifications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/notifications/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/notifications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/notifications/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/notifications/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

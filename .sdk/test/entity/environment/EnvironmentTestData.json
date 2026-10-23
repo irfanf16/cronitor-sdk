@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "environment": {
+      "ENVIRONMENT00": {
+        "id": "ENVIRONMENT00"
+      },
+      "ENVIRONMENT01": {
+        "id": "ENVIRONMENT01"
+      },
+      "ENVIRONMENT02": {
+        "id": "ENVIRONMENT02"
+      }
+    }
+  },
+  "new": {
+    "environment": {
+      "environment_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /api/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/environments/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/environments/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/environments/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

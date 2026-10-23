@@ -1,0 +1,45 @@
+# BasicIntegrationFlow
+
+main: kit: flow: BasicIntegrationFlow:
+{
+  entity: "integration",
+  kind: "basic",
+  name: "BasicIntegrationFlow",
+  step: [
+    {
+      i: {
+        ref: "integration_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "integration_ref01",
+        srcdatavar: "integration_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-integration_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "integration_ref01",
+        suffix: "_rm0"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicIntegrationFlow"
+}

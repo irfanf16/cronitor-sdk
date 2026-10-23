@@ -1,0 +1,53 @@
+# Entity: aggregate
+
+main: kit: entity: aggregate: {
+
+  alias: field: {}
+
+  name: "aggregate"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/aggregates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/aggregates"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "aggregates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

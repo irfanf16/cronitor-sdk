@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "Monitor cron jobs, heartbeats, websites, and APIs, and manage alerts, issues, status pages, and Real User Monitoring sites. Reference: https://cronitor.io/docs/api"
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Basic"
+        scheme: "apiKey"
+        type: "http"
+      }
+      servers: [
+        {
+          url: "https://cronitor.io"
+        }
+      ]
+      summary: "Monitor cron jobs, heartbeats, websites, and APIs, and manage alerts, issues, status pages, and Real User Monitoring sites."
+      title: "Cronitor API"
+      version: "2025-11-28"
+      website: "https://cronitor.io"
+    }
+  }
+}
+

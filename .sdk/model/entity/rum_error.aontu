@@ -1,0 +1,267 @@
+# Entity: rum_error
+
+main: kit: entity: rum_error: {
+
+  alias: field: {}
+
+  fields: {
+    colno: {
+      h: "Colno"
+      n: "colno"
+      r: true
+      ro: true
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    environment: {
+      h: "Environment"
+      n: "environment"
+      r: true
+      sh: "Environment key."
+      t: "`$STRING`"
+    }
+    error_type: {
+      h: "Error Type"
+      n: "error_type"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    filename: {
+      h: "Filename"
+      n: "filename"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    first_seen: {
+      fo: "date-time"
+      h: "First Seen"
+      n: "first_seen"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    ignored: {
+      h: "Ignored"
+      n: "ignored"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    last_seen: {
+      fo: "date-time"
+      h: "Last Seen"
+      n: "last_seen"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    latest_event: {
+      h: "Latest Event"
+      n: "latest_event"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    lineno: {
+      h: "Lineno"
+      n: "lineno"
+      r: true
+      ro: true
+      t: "`$INTEGER`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+    occurrences: {
+      h: "Occurrences"
+      n: "occurrences"
+      r: true
+      ro: true
+      t: "`$INTEGER`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: true
+      sh: "RUM site key."
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      ro: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "rum_error"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/site_errors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "env"
+                or: "env"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "environment"
+                or: "environment"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ignored"
+                or: "ignored"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "site"
+                or: "site"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/site_errors"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "site_errors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/site_errors/{key}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "cronitor_version"
+                or: "Cronitor-Version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/site_errors/{key}"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "site_errors"
+            }
+            {
+              var: "key"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

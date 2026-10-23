@@ -1,0 +1,27 @@
+name: SDK verification
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: .sdk
+      - run: npm run generate
+        working-directory: .sdk
+      - run: npx voxgig-sdkgen doctor
+        working-directory: .sdk
+      - run: npm ci
+        working-directory: ts
+      - run: npm test
+        working-directory: ts
+      - run: node --test verification/wire.test.cjs

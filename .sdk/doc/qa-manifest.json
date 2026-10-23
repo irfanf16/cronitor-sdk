@@ -1,0 +1,42 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "* `24h` - 24h * `7d` - 7d * `30d` - 30d * `90d` - 90d",
+      "* `public` - public * `password` - password",
+      "* `telemetry` - Telemetry * `sdk` - SDK Integration * `custom` - Custom",
+      "Assertions such as &quot;response.code = 200&quot; or &quot;metric.`queue_depth` &lt; 100&quot;.",
+      "Deleted",
+      "Email address of the assigned team member.",
+      "Environment key.",
+      "Event accepted",
+      "Failures tolerated before an alert. Default 0.",
+      "Group key.",
+      "Monitor cron jobs, heartbeats, websites, and APIs, and manage alerts, issues, status pages, and Real User Monitoring sites. Reference: https://cronitor.io/docs/api",
+      "No query given",
+      "No response body",
+      "Present with withAlertDetails=true.",
+      "RUM site key.",
+      "Response schema not yet published. See https://cronitor.io/docs/environments-api",
+      "Response schema not yet published. See https://cronitor.io/docs/groups-api",
+      "Response schema not yet published. See https://cronitor.io/docs/integrations-api",
+      "Response schema not yet published. See https://cronitor.io/docs/issues-api",
+      "Response schema not yet published. See https://cronitor.io/docs/metrics-api",
+      "Response schema not yet published. See https://cronitor.io/docs/monitors-api",
+      "Response schema not yet published. See https://cronitor.io/docs/notifications-api",
+      "Response schema not yet published. See https://cronitor.io/docs/sites-api",
+      "Returns the total duration of the maintenance window in seconds.",
+      "Returns whether the window is currently past|ongoing|upcoming.",
+      "Seconds of downtime.",
+      "Seconds to wait after a missed or late event before alerting.",
+      "Send an API key as the HTTP Basic username with an empty password, for example `curl -u API_KEY: https://cronitor.io/api/monitors`. Keys carry scopes: https://cronitor.io/docs/api-keys",
+      "Status page component keys.",
+      "Status page keys.",
+      "Values derived from the monitor configuration."
+    ]
+  }
+}

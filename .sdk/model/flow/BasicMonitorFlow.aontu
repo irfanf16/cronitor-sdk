@@ -1,0 +1,100 @@
+# BasicMonitorFlow
+
+main: kit: flow: BasicMonitorFlow:
+{
+  entity: "monitor",
+  kind: "basic",
+  name: "BasicMonitorFlow",
+  step: [
+    {
+      i: {
+        ref: "monitor_ref01"
+      }
+
+      m: {
+        monitor_id: "monitor01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "monitor_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "monitor_ref01",
+        srcdatavar: "monitor_ref01_data",
+        suffix: "_up0",
+        textfield: "defaultName"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-monitor_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "monitor_ref01",
+        srcdatavar: "monitor_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "monitor01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-monitor_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "monitor_ref01",
+        suffix: "_rm0"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "monitor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMonitorFlow"
+}

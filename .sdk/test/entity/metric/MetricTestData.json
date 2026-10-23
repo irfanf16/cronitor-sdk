@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "metric": {
+      "METRIC00": {
+        "id": "METRIC00"
+      },
+      "METRIC01": {
+        "id": "METRIC01"
+      },
+      "METRIC02": {
+        "id": "METRIC02"
+      }
+    }
+  },
+  "new": {
+    "metric": {
+      "metric_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /api/metrics": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

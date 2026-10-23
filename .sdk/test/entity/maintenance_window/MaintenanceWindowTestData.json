@@ -1,0 +1,117 @@
+{
+  "existing": {
+    "maintenance_window": {
+      "MAINTENANCE_WINDOW00": {
+        "affects_all_monitors": true,
+        "affects_statuspage_components": false,
+        "all_affected_monitors": "sac",
+        "created": "sad",
+        "description": "sae",
+        "duration": 175,
+        "end": "sb0",
+        "environment": "sb1",
+        "groups": [],
+        "id": "MAINTENANCE_WINDOW00",
+        "key": "sb4",
+        "monitors": [],
+        "name": "sb6",
+        "start": "sb7",
+        "state": "sb8",
+        "statuspages": [],
+        "updated": "sba"
+      },
+      "MAINTENANCE_WINDOW01": {
+        "affects_all_monitors": true,
+        "affects_statuspage_components": false,
+        "all_affected_monitors": "s156",
+        "created": "s157",
+        "description": "s158",
+        "duration": 345,
+        "end": "s15a",
+        "environment": "s15b",
+        "groups": [],
+        "id": "MAINTENANCE_WINDOW01",
+        "key": "s15e",
+        "monitors": [],
+        "name": "s160",
+        "start": "s161",
+        "state": "s162",
+        "statuspages": [],
+        "updated": "s164"
+      },
+      "MAINTENANCE_WINDOW02": {
+        "affects_all_monitors": true,
+        "affects_statuspage_components": false,
+        "all_affected_monitors": "s200",
+        "created": "s201",
+        "description": "s202",
+        "duration": 515,
+        "end": "s204",
+        "environment": "s205",
+        "groups": [],
+        "id": "MAINTENANCE_WINDOW02",
+        "key": "s208",
+        "monitors": [],
+        "name": "s20a",
+        "start": "s20b",
+        "state": "s20c",
+        "statuspages": [],
+        "updated": "s20e"
+      }
+    }
+  },
+  "new": {
+    "maintenance_window": {
+      "maintenance_window_ref01": {
+        "affects_all_monitors": true,
+        "affects_statuspage_components": false,
+        "all_affected_monitors": "s2aa",
+        "created": "s2ab",
+        "description": "s2ac",
+        "duration": 685,
+        "end": "s2ae",
+        "environment": "s2af",
+        "groups": [],
+        "key": "s2b2",
+        "monitors": [],
+        "name": "s2b4",
+        "start": "s2b5",
+        "state": "s2b6",
+        "statuspages": [],
+        "updated": "s2b8"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/maintenance_windows": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/maintenance_windows": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/maintenance_windows/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /api/maintenance_windows/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/maintenance_windows/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/maintenance_windows/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

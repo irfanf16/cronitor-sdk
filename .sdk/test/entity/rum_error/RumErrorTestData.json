@@ -1,0 +1,93 @@
+{
+  "existing": {
+    "rum_error": {
+      "RUM_ERROR00": {
+        "colno": 150,
+        "created": "s97",
+        "environment": "s98",
+        "error_type": "s99",
+        "filename": "s9a",
+        "first_seen": "s9b",
+        "ignored": true,
+        "key": "s9d",
+        "last_seen": "s9e",
+        "latest_event": "s9f",
+        "lineno": 160,
+        "message": "sa1",
+        "occurrences": 162,
+        "site": "sa3",
+        "updated": "sa4",
+        "id": "RUM_ERROR00"
+      },
+      "RUM_ERROR01": {
+        "colno": 300,
+        "created": "s12d",
+        "environment": "s12e",
+        "error_type": "s12f",
+        "filename": "s130",
+        "first_seen": "s131",
+        "ignored": true,
+        "key": "s133",
+        "last_seen": "s134",
+        "latest_event": "s135",
+        "lineno": 310,
+        "message": "s137",
+        "occurrences": 312,
+        "site": "s139",
+        "updated": "s13a",
+        "id": "RUM_ERROR01"
+      },
+      "RUM_ERROR02": {
+        "colno": 450,
+        "created": "s1c3",
+        "environment": "s1c4",
+        "error_type": "s1c5",
+        "filename": "s1c6",
+        "first_seen": "s1c7",
+        "ignored": true,
+        "key": "s1c9",
+        "last_seen": "s1ca",
+        "latest_event": "s1cb",
+        "lineno": 460,
+        "message": "s1cd",
+        "occurrences": 462,
+        "site": "s1cf",
+        "updated": "s1d0",
+        "id": "RUM_ERROR02"
+      }
+    }
+  },
+  "new": {
+    "rum_error": {
+      "rum_error_ref01": {
+        "colno": 600,
+        "created": "s259",
+        "environment": "s25a",
+        "error_type": "s25b",
+        "filename": "s25c",
+        "first_seen": "s25d",
+        "ignored": true,
+        "key": "s25f",
+        "last_seen": "s260",
+        "latest_event": "s261",
+        "lineno": 610,
+        "message": "s263",
+        "occurrences": 612,
+        "site": "s265",
+        "updated": "s266"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/site_errors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/site_errors/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "existing": {
+    "group": {
+      "GROUP00": {
+        "id": "GROUP00",
+        "group_id": "GROUP01",
+        "hour": "HOUR01",
+        "key": "KEY01"
+      },
+      "GROUP01": {
+        "id": "GROUP01",
+        "group_id": "GROUP01",
+        "hour": "HOUR01",
+        "key": "KEY01"
+      },
+      "GROUP02": {
+        "id": "GROUP02",
+        "group_id": "GROUP01",
+        "hour": "HOUR01",
+        "key": "KEY01"
+      }
+    }
+  },
+  "new": {
+    "group": {
+      "group_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /api/groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/groups/{key}/pause/{hours}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/groups/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/groups/{key}/pause": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/groups/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/groups/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

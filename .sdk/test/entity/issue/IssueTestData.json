@@ -1,0 +1,121 @@
+{
+  "existing": {
+    "issue": {
+      "ISSUE00": {
+        "affected_components": [],
+        "alerts": [],
+        "assigned_to": "sb6",
+        "created": "sb7",
+        "created_by": "sb8",
+        "duration": 185,
+        "ended": "sba",
+        "environment": "sbb",
+        "id": "ISSUE00",
+        "key": "sbd",
+        "monitors": [],
+        "name": "sbf",
+        "severity": "sc0",
+        "started": "sc1",
+        "state": "sc2",
+        "statuspages": [],
+        "updated": "sc4",
+        "updates": []
+      },
+      "ISSUE01": {
+        "affected_components": [],
+        "alerts": [],
+        "assigned_to": "s16a",
+        "created": "s16b",
+        "created_by": "s16c",
+        "duration": 365,
+        "ended": "s16e",
+        "environment": "s16f",
+        "id": "ISSUE01",
+        "key": "s171",
+        "monitors": [],
+        "name": "s173",
+        "severity": "s174",
+        "started": "s175",
+        "state": "s176",
+        "statuspages": [],
+        "updated": "s178",
+        "updates": []
+      },
+      "ISSUE02": {
+        "affected_components": [],
+        "alerts": [],
+        "assigned_to": "s21e",
+        "created": "s21f",
+        "created_by": "s220",
+        "duration": 545,
+        "ended": "s222",
+        "environment": "s223",
+        "id": "ISSUE02",
+        "key": "s225",
+        "monitors": [],
+        "name": "s227",
+        "severity": "s228",
+        "started": "s229",
+        "state": "s22a",
+        "statuspages": [],
+        "updated": "s22c",
+        "updates": []
+      }
+    }
+  },
+  "new": {
+    "issue": {
+      "issue_ref01": {
+        "affected_components": [],
+        "alerts": [],
+        "assigned_to": "s2d2",
+        "created": "s2d3",
+        "created_by": "s2d4",
+        "duration": 725,
+        "ended": "s2d6",
+        "environment": "s2d7",
+        "key": "s2d9",
+        "monitors": [],
+        "name": "s2db",
+        "severity": "s2dc",
+        "started": "s2dd",
+        "state": "s2de",
+        "statuspages": [],
+        "updated": "s2e0",
+        "updates": []
+      }
+    }
+  },
+  "requests": {
+    "POST /api/issues": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/issues/bulk": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/issues": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/issues/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/issues/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/issues/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

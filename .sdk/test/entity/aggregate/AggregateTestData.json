@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "aggregate": {
+      "AGGREGATE00": {
+        "id": "AGGREGATE00"
+      },
+      "AGGREGATE01": {
+        "id": "AGGREGATE01"
+      },
+      "AGGREGATE02": {
+        "id": "AGGREGATE02"
+      }
+    }
+  },
+  "new": {
+    "aggregate": {
+      "aggregate_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /api/aggregates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

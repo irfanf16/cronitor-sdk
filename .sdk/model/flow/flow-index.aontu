@@ -1,0 +1,18 @@
+# Flows
+
+@"./BasicAggregateFlow.aontu"
+@"./BasicApiKeyFlow.aontu"
+@"./BasicEnvironmentFlow.aontu"
+@"./BasicGroupFlow.aontu"
+@"./BasicIntegrationFlow.aontu"
+@"./BasicIssueFlow.aontu"
+@"./BasicMaintenanceWindowFlow.aontu"
+@"./BasicMetricFlow.aontu"
+@"./BasicMonitorFlow.aontu"
+@"./BasicNotificationFlow.aontu"
+@"./BasicRumErrorFlow.aontu"
+@"./BasicSearchFlow.aontu"
+@"./BasicSiteFlow.aontu"
+@"./BasicStatusPageComponentFlow.aontu"
+@"./BasicStatusPageFlow.aontu"
+@"./BasicTelemetryFlow.aontu"
