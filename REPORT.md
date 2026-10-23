@@ -1,6 +1,6 @@
 # Voxgig SDK generator observations
 
-Author: Irfan · Date: 23 October 2026 · Repository: https://github.com/irfanf16/cronitor-sdk
+Author: Irfan · Research: 23 October 2026 · Updated: 24 October 2026 · Repository: https://github.com/irfanf16/cronitor-sdk
 
 **Status: generated and verified offline; authenticated live testing pending a test account.**
 
@@ -28,6 +28,7 @@ Actual resolved toolchain: sdkgen 4.35.3, apidef 8.25.5, model 12.0.1, docgen 0.
 - Generated suite: 46 test files passed, zero failed after the fixture adjustment below. These are Node's file-level summary counts, not the number of individual assertions.
 - Three independent request checks passed: monitor listing/auth/version/query mapping, monitor resource loading, and HTTP 401 envelope handling. All use a synthetic fetch transport, not Cronitor's servers.
 - `doctor` reported the scaffold matched, with zero additive items.
+- [SDK verification on GitHub Actions passed](https://github.com/irfanf16/cronitor-sdk/actions/runs/40022201530). The separate generated documentation workflow failed; see finding 6.
 - Authenticated live tests: **not run**. The read-only smoke script is ready; no test key was available. Write operations and complete endpoint coverage remain unverified.
 
 ## Developer experience
@@ -41,6 +42,7 @@ Findings worth improving:
 3. **Installation wording.** The generated TypeScript README says a clone carries compiled `dist/`. This repository ignores build output, so a fresh clone must build first. `QUICKSTART.md` provides the verified sequence.
 4. **Defaults and verification.** The scaffold initially attributed publication to Voxgig and used its namespace. I configured Irfan's ownership and repository. The default CI also needed generation before testing because the ignored `.sdk/test/test.json` is required by the offline corpus.
 5. **Dependency warning.** Scaffold installation reported three development-toolchain advisories (two low, one high). A follow-up audit request failed at the registry endpoint; advisory identities and fixes were not verified. The generated SDK itself declares no production npm dependencies.
+6. **Documentation CI assumes an existing compiled model.** The [generated documentation workflow failed on a fresh checkout](https://github.com/irfanf16/cronitor-sdk/actions/runs/40022201463) with `Cannot find module .../.sdk/model/sdk.json`. It compiles build sources and invokes docgen without first generating that ignored model file. The standalone SDK workflow generates the model first and passed. This remains an open generator-workflow finding; a proposed upstream fix is to generate the model before invoking docgen. I did not change generated documentation code or weaken its checks.
 
 ## Time and AI disclosure
 

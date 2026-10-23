@@ -16,7 +16,7 @@ The observations report is here:
 
 https://github.com/irfanf16/cronitor-sdk/blob/main/REPORT.md
 
-The TypeScript build and all 46 generated test files pass locally, along with independent mocked request checks for authentication, API versioning, monitor reads and error handling. I recorded a custom-header test-fixture issue, an unreachable generated flow warning and an installation-documentation mismatch, including reproduction details.
+The TypeScript build and all 46 generated test files pass locally, along with independent mocked request checks for authentication, API versioning, monitor reads and error handling. The SDK verification workflow also passes on GitHub Actions. I recorded a custom-header test-fixture issue, an unreachable generated flow warning, an installation-documentation mismatch, and a separate generated documentation CI failure caused by a missing compiled model, including reproduction details.
 
 I used AI assistance for the research, generation and verification. My active human time was [enter actual minutes]. Authenticated live testing is [replace with the actual result; currently not run because a test account/key is pending].
 
