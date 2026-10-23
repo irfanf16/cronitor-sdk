@@ -2,13 +2,13 @@
 
 Author: Irfan · Research: 23 October 2026 · Updated: 24 October 2026 · Repository: https://github.com/irfanf16/cronitor-sdk
 
-**Status: generated and verified offline; authenticated live testing pending a test account.**
+**Status: generated, verified offline, and authenticated monitor CRUD verified against Cronitor.**
 
 ## Selection and scope
 
 I selected [Cronitor](https://cronitor.io/docs/api), a monitoring SaaS with a free account and an official OpenAPI 3.0.3 specification. I enumerated all 804 public repositories returned by the Voxgig SDK organisation API on 23 October and found no name containing `cronitor`. The snapshot is in `evidence/catalogue-2026-10-23.txt`; catalogue availability can change.
 
-The TypeScript SDK was produced using the official Voxgig generator, not a handwritten client. It exposes 16 inferred entities from 37 paths and 72 HTTP operations. Generation breadth does not establish production readiness: the independent verification focuses on monitor reads and authentication.
+The TypeScript SDK was produced using the official Voxgig generator, not a handwritten client. It exposes 16 inferred entities from 37 paths and 72 HTTP operations. Independent live verification covers monitor create, load, update, list and remove; the remaining entities and complete endpoint coverage are unverified.
 
 ## Reproduction and results
 
@@ -29,7 +29,9 @@ Actual resolved toolchain: sdkgen 4.35.3, apidef 8.25.5, model 12.0.1, docgen 0.
 - Three independent request checks passed: monitor listing/auth/version/query mapping, monitor resource loading, and HTTP 401 envelope handling. All use a synthetic fetch transport, not Cronitor's servers.
 - `doctor` reported the scaffold matched, with zero additive items.
 - [SDK verification on GitHub Actions passed](https://github.com/irfanf16/cronitor-sdk/actions/runs/40022201530). The separate generated documentation workflow failed; see finding 6.
-- Authenticated live tests: **not run**. The read-only smoke script is ready; no test key was available. Write operations and complete endpoint coverage remain unverified.
+- Authenticated live tests: **passed**. The read-only smoke test verified HTTP 200 and response shape through `direct()` plus generated `Monitor.list()` on the initially empty account.
+- The separate CRUD test created one uniquely named paused heartbeat with notifications disabled, loaded it, updated its name, confirmed the update with a fresh load, found it through listing, and removed it. A subsequent GET returned HTTP 404, confirming deletion. No existing monitor was modified. Captured results are in `evidence/live-verification.txt`.
+- The initial create attempt used the older `schedule` input and returned HTTP 400. The versioned schema uses `schedules`; switching to `schedules: ['every 1 day']` resolved it. Generated update expects `{ monitor_list: [...] }`, transformed into the API's array request body. Both details are preserved in the executable test.
 
 ## Developer experience
 
@@ -46,6 +48,6 @@ Findings worth improving:
 
 ## Time and AI disclosure
 
-AI performed research, generation, configuration, diagnostics and drafting. Automated work started at approximately 22:35 PKT; this is not a measurement of human effort. The author's active human time has not been measured here and must be supplied honestly before submission. No claim of staying within 30 human minutes is made. Remaining human actions are creating/verifying the test account and reviewing the deliverables.
+AI performed research, generation, configuration, diagnostics, live testing and drafting. The author created the Cronitor account and supplied credentials. Active human time has not been measured by the tooling; AI execution and waiting time are not presented as human effort, and no unverified claim about the 30-minute cap is made. The author should confirm their actual active time when submitting.
 
 The SDK is MIT licensed with Irfan as copyright holder. It is unofficial and is not endorsed by Cronitor. The upstream specification was downloaded from https://cronitor.io/api/openapi.json; its hash and source are recorded in `evidence/SOURCES.md`.

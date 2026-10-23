@@ -1,0 +1,21 @@
+Authenticated Cronitor verification — 24 October 2026 (Asia/Karachi)
+
+Captured successful command output; credentials and account identifiers omitted.
+
+Command: node --env-file=.env scripts/live-smoke.cjs
+PASS: authenticated direct list and generated Monitor.list (read only).
+Monitor count on first page: 0
+
+Command: node --env-file=.env scripts/live-crud.cjs
+PASS: generated Monitor.create (temporary paused monitor, notifications disabled).
+PASS: generated Monitor.load.
+PASS: generated Monitor.update, confirmed by a fresh load.
+PASS: generated Monitor.list finds the temporary record.
+PASS: generated Monitor.remove; subsequent GET returns HTTP 404.
+
+Earlier attempts: two create attempts with the older schedule input returned
+HTTP 400. Each attempted cleanup confirmed the temporary record was removed
+or absent. The successful attempt uses the versioned schedules array.
+
+Coverage: Monitor CRUD only; remaining entities, telemetry delivery, rate limits,
+and complete API coverage are not established by these results.

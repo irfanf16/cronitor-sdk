@@ -28,6 +28,16 @@ node --env-file=.env scripts/live-smoke.cjs
 
 This checks authenticated listing through both `direct()` and `Monitor().list()`, then loads an existing monitor if one exists. It creates, updates and deletes nothing. A successful empty-account list does not verify loading. Other entities and write operations are not covered by this smoke test.
 
+## Live monitor CRUD test
+
+With a test-account key carrying `monitor:read` and `monitor:write`, run:
+
+```sh
+node --env-file=.env scripts/live-crud.cjs
+```
+
+This creates one uniquely named paused heartbeat monitor with notifications disabled, verifies create/load/update/list/remove through the generated SDK, and confirms deletion with an HTTP 404. It attempts cleanup if a stage fails. It never changes existing monitors. For the configured API version use `schedules: ['every 1 day']`, rather than the older `schedule` field. Generated updates take `{ monitor_list: [...] }`.
+
 ```js
 const { CronitorSDK } = require('./ts/dist/CronitorSDK')
 const client = new CronitorSDK({ apikey: process.env.CRONITOR_API_KEY })
