@@ -51,3 +51,5 @@ The SDK maps `page_size` to Cronitor's `pageSize` query parameter and sends `Cro
 Edit the OpenAPI definition, `.sdk/model/project.aontu`, or `.sdk/model/guide/guide.aontu`, then regenerate. Do not edit `ts/` source. Project ownership is configured in the model; `sdk.aontu` also sets `origin: 'irfanf16'`. Preserve that setting when re-scaffolding.
 
 The two project-specific header expectations live in `.sdk/test/primary/prepareHeaders.aontu` and `makeSpec.aontu`; re-scaffolding may replace them. See [REPORT.md](REPORT.md) for findings and verification limits.
+
+Documentation CI lives in `.github/workflows/documentation.yml`. The model disables only the default emitted workflow (`main.kit.doc.ci.active: false`); documentation generation and quality checks remain enabled. The project workflow generates the model first, then runs full docgen/Vale QA, so it also works on a fresh checkout. Re-running generation preserves this workflow.

@@ -36,3 +36,6 @@ main: kit: author: {
 }
 main: kit: target: ts: publish: registry: package: '@irfanf16/cronitor-sdk'
 main: kit: config: headers: 'Cronitor-Version': '2025-11-28'
+
+# The project-owned workflow builds the model before running docgen QA.
+main: kit: doc: ci: active: false

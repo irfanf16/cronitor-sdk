@@ -30,3 +30,4 @@ dist-test/
 .sdk/test/.model-config/
 .jostraca/
 .sdk/.jostraca/
+.sdk/doc/qa/styles/Google/

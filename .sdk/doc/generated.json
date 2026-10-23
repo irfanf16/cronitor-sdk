@@ -1,14 +1,12 @@
 {
   "version": 2,
   "roots": [
-    ".github/workflows/docgen.yml",
     ".sdk/doc/generated.json",
     ".sdk/doc/qa",
     ".sdk/doc/qa-manifest.json",
     "SUMMARY.md"
   ],
   "files": [
-    ".github/workflows/docgen.yml",
     ".sdk/doc/generated.json",
     ".sdk/doc/qa-manifest.json",
     ".sdk/doc/qa/STYLE-GUIDE.md",
